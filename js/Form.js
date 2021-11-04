@@ -11,7 +11,12 @@ class Form {
     this.btn_environment = createButton("Talk About The Environment");
     this.btn_otherapps = createButton("More Like This");
     this.btn_aboutus = createButton("About Us");
+    this.btn_go = createButton("Log In");
     this.btn_fakehome = createButton("");
+    this.input_firstname = createInput("").attribute("placeholder", "First Name");
+    this.input_lastname = createInput("").attribute("placeholder", "Last Name");
+    this.input_email = createInput("").attribute("placeholder", "Email/Username");
+    this.input_password = createInput("").attribute("placeholder", "Password");
   }
   hide(){
 
@@ -20,8 +25,26 @@ class Form {
 
   }
   display(){
+    this.input_firstname.position(180, 210);
+    this.input_firstname.style('width', '100px');
+    this.input_lastname.position(300, 210);
+    this.input_lastname.style('width', '100px');
+    this.input_email.position(180, 440);
+    this.input_email.style('width', '220px');
+    this.input_password.position(180, 510);
+    this.input_password.style('width', '220px');
+    this.btn_go.position(205, 580);
+
+    this.btn_intro.hide();
+this.btn_education.hide();
+this.btn_environment.hide();
+this.btn_otherapps.hide();
+this.btn_rate.hide();
+this.btn_socialmedia.hide();
+this.title.hide();
+hide = true;
     this.title.html("App Title");
-    this.title.position(205, 140);
+    this.title.position(195, 140);
     this.btn_settings.position(130, 130);
     this.btn_settings.style('background-color', 'lightgray');
     this.btn_settings.style('border-radius', 0);
@@ -82,6 +105,31 @@ class Form {
     this.btn_aboutus.style('width', '100px');
     this.btn_aboutus.style('height', '30px');
     this.btn_aboutus.style('font-size', '7px');
+
+
+    this.btn_login.mousePressed(()=>{
+this.btn_intro.hide();
+this.btn_education.hide();
+this.btn_environment.hide();
+this.btn_otherapps.hide();
+this.btn_rate.hide();
+this.btn_socialmedia.hide();
+this.title.hide();
+hide = true;
+    });
+    this.btn_go.mousePressed(()=>{
+      if(this.input_firstname.value().length>=1 && this.input_firstname.value()!==""&&this.input_lastname.value().length>=1 && this.input_lastname.value()!==""&&this.input_email.value().length>=1 && this.input_email.value()!==""&&this.input_password.value().length>=1 && this.input_password.value()!==""){
+        swal({
+          confirmButtonColor: '#8CD4F5', title: `Successfully Logged In`,
+          text: 'You are successfully logged in.',
+          type: "success",
+          showConfirmButton: false,
+          timer: 3000
+        }
+          )
+      
+      }
+          });
   }
 
 }
