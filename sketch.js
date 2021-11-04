@@ -22,7 +22,7 @@ function setup(){
   iphone = createSprite(288, 430);
   iphone.addImage(iphoneImg);
   iphone.scale = 1.6;
-  icon = createSprite(288, 370);
+  icon = createSprite(288, 355);
   icon.addImage(iconImg);
   icon.scale = 0.45;
 }
@@ -30,6 +30,5 @@ function setup(){
 
 
 function draw(){
-
   drawSprites();
 }
