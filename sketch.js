@@ -11,8 +11,18 @@ var aimg1, aimg2, aimg3, aimg4, aimg5, aimg6, aimg7, aimg8, aimg9, aimg10, close
 var rand;
 var allowance = "yes";
 var hide = false;
+var hide1 = false;
+var hide2 = false;
+var hide3 = false;
+var hide4 = true;
+var icon1, icon2;
+var aboutmetext, aboutmetextimg;
+let brightness, volume, language, style, mode;
 
 //ADD SOUNDS & ADDS TO FINAL APP
+//ON 'MORE LIKE THIS' PAGE MAKE LINKS GO TO MY APPS (CREATE LINKS BY USING https://p5js.org/reference/#/p5/createA)
+//CREATE VIDEOS, AUDIOS , sliders, dropdowns, AND CAMERA, radios, checkbox, file input, button, and other components USING ATTACHED LINK (https://p5js.org/reference/)
+//BRIGHTNESS, VOLUME, DARK MODE, LANGUAGE SELECTION
 //USE NAMES THAT ARE IN THE LOGIN INPUT THAT THE USER FILLED OUT
 //BEFORE LOGGING IN AND AFTER LOGGING OUT THE USER'S NAME, PASSWORD, EMAIL, AND LAST NAME ARE NOTHING/ANONYMOUS
 //NAMES CANNOT BE REPEATED
@@ -32,6 +42,7 @@ function preload(){
   aimg9 = loadImage("images/0009.jpg");
   aimg10 = loadImage("images/0010.jpg");
   closeimg = loadImage("images/close.png");
+  aboutmetextimg = loadImage("images/aboutmetext.png");
 }
 
 function setup(){
@@ -46,6 +57,12 @@ function setup(){
   icon.addImage(iconImg);
   icon.scale = 0.45;
   icon.depth = 1;
+  icon1 = createSprite(180, 210);
+  icon1.addImage(iconImg);
+  icon1.scale = 0.1;
+  icon2 = createSprite(390, 210);
+  icon2.addImage(iconImg);
+  icon2.scale = 0.1;
   a1 = createSprite(290, 350, 200, 200);
   a1.addImage(aimg1);
   a1.scale = 0.045;
@@ -101,6 +118,62 @@ function setup(){
   close.scale = 0.15;
   close.visible = false;
   close.depth = 10;
+  aboutmetext = createSprite(289, 532, 200, 200);
+  aboutmetext.addImage(aboutmetextimg);
+  aboutmetext.scale = 0.3;
+  aboutmetext.depth = 10;
+  brightness = createSlider(0, 10, 5, 1);
+  brightness.position(265, 230);
+  brightness.style('width', '110px');
+  volume = createSlider(0, 100, 50, 1);
+  volume.position(245, 430);
+  volume.style('width', '110px');
+  
+  language = createSelect();
+  language.position(250, 470);
+  language.option('English');
+  language.option('普通话');
+  language.option('Español');
+  language.option('Français');
+  language.option('Português');
+  language.option('हिंदी');
+  language.option('Pусский');
+  language.option('বাংলা');
+  language.option('عربي');
+  language.option('Nederlands');
+  language.option('日本');
+  language.option('ਪੰਜਾਬੀ');
+  language.option('Kiswahili');
+  language.option('Basa Jawa');
+  language.option('Türk');
+  language.option('한국인');
+  language.option('తెలుగు');
+  language.option('मराठी');
+  language.option('اردو');
+  language.option('தமிழ்');
+  language.selected('English');
+
+  style = createSelect();
+  style.position(250, 510);
+  style.option('Basic');
+  style.option('Traditional');
+  style.option('Modern');
+  style.option('Fancy');
+  style.option('Formal');
+  style.option('Decorative');
+  style.option('Playful');
+  style.selected('Basic');
+
+  fill("black");
+  textFont("Courier");
+  strokeWeight(1);
+  textSize(15);
+  stroke(0);
+  mode = createSelect();
+  mode.position(250, 550);
+  mode.option('Auto');
+  mode.option('Light Mode');
+  mode.option('Dark Mode');
 }
 
 
@@ -110,6 +183,38 @@ if(hide === false){
   icon.visible = true;
 } else if (hide === true){
   icon.visible = false;
+}
+
+if(hide4 === false){
+volume.show();
+brightness.show();
+language.show();
+style.show();
+mode.show();
+} else if (hide4 === true){
+volume.hide();
+brightness.hide();
+language.hide();
+style.hide();
+mode.hide();
+}
+
+if(hide1 === false){
+  aboutmetext.visible = true;
+} else if (hide1 === true){
+  aboutmetext.visible = false;
+}
+
+if(hide2 === false){
+  icon1.visible = true;
+} else if (hide2 === true){
+  icon1.visible = false;
+}
+
+if(hide3 === false){
+  icon2.visible = true;
+} else if (hide3 === true){
+  icon2.visible = false;
 }
 
   if(frameCount%600 === 0){
@@ -203,4 +308,19 @@ close.visible = true;
   close.visible = false;
   }
   drawSprites();
+  fill("black");
+  textFont("Courier");
+  strokeWeight(1);
+  textSize(15);
+  stroke(0);
+  if(hide4 === false){
+  text("Brightness:", 150, 255);
+  text(brightness.value(), 410, 255); 
+  text("Volume:", 150, 455);
+  text(volume.value(), 410, 455); 
+  text("Language:", 150, 490);
+  text("Style:", 150, 530);
+  text("Mode:", 150, 570);
+  text("Reset Progress:", 150, 610);
+  }
 }
