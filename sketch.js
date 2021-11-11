@@ -17,7 +17,10 @@ var hide3 = false;
 var hide4 = true;
 var hide5 = true;
 var hide6 = true;
+var selected = false;
 var hide7 = true;
+var hide8 = true;
+var hide9 = true;
 var name = "Anonymous";
 var CM1, CM2, CM3, CM4, CM5, CM6;
 var reported = false;
@@ -26,10 +29,20 @@ var tries = 1;
 var clicked = "nothing";
 var like, dislike, likeunclicked, dislikeunclicked, likeclicked, dislikeclicked;
 var aboutmetext, aboutmetextimg;
-let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, attendanceapp;
+let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, qbp, qpa, mood1, environmentalissues;
+var mood, moodimg;
+
+//START HERE
+//textarea instead of text input
+//center titles of screens
+//END HERE
 
 //ADD SOUNDS & ADDS TO FINAL APP
+//display time
+//title position & font size = same
+//same border radius for all elements
 //ONE COLOR SCHEME FOR APP
+//when press home icon you hide everything and take it to home screen
 //shorten button text
 //make all titles and home buttons the same font size and size and position
 //covid19 bot
@@ -67,6 +80,7 @@ function preload(){
   dislikeclicked = loadImage("images/dislikeclicked.png");
   likeunclicked = loadImage("images/like.png");
   dislikeunclicked = loadImage("images/dislike.png");
+  moodimg = loadImage("images/moods.png");
 }
 
 function setup(){
@@ -180,6 +194,26 @@ function setup(){
   language.option('தமிழ்');
   language.selected('English');
 
+  environmentalissues = createSelect();
+  environmentalissues.position(170, 435);
+  environmentalissues.style('width', '230px');
+  environmentalissues.option('Water Pollution/Contamination');
+  environmentalissues.option('Soil Pollution/Contamination');
+  environmentalissues.option('Wildlife Extinction');
+  environmentalissues.option('Air Pollution');
+  environmentalissues.option('Biological Pollution');
+  environmentalissues.option('Climate Change');
+  environmentalissues.option('Dam Impact');
+  environmentalissues.option('Deforestation');
+  environmentalissues.option('Natural Disasters');
+  environmentalissues.option('Nuclear Issues');
+  environmentalissues.option('Noise Pollution');
+  environmentalissues.option('Waste Disposal');
+  environmentalissues.option('Natural Resource Depletion');
+  environmentalissues.option('Land Conservation');
+  environmentalissues.option('Overpopulation');
+  environmentalissues.selected('Water Pollution/Contamination');
+
   style = createSelect();
   style.position(250, 510);
   style.option('Basic');
@@ -203,15 +237,17 @@ function setup(){
   mode.option('Dark Mode');
 
   earthhero = createA('https://play.google.com/store/apps/details?id=com.earthheroorg.earthhero&hl=en_US&gl=US', '1. Earth Hero');
-  earthhero.position(230, 440);
+  earthhero.position(240, 440);
   humanly = createA('https://play.google.com/store/apps/details?id=org.cyny.neighborly&hl=en_US&gl=US', '2. Humanly');
-  humanly.position(230, 470);
-  weatherapp = createA('google.com', '1. Weather App');
+  humanly.position(243, 470);
+  weatherapp = createA('https://appetize.io/embed/xc1w6f1krd589zhp22a0mgftyw?autoplay=false&debug=true&device=pixel4&deviceColor=black&embed=true&launchUrl=exp:%2F%2Fexp.host%2F@gandhiatharv%2Fweather-app%2B5Dto_ESyR9&orientation=portrait&scale=81&screenOnly=false&xDocMsg=true&xdocMsg=true&params=%7B%22EXDevMenuDisableAutoLaunch%22:true,%22EXKernelLaunchUrlDefaultsKey%22:%22exp:%2F%2Fexp.host%2F@gandhiatharv%2Fweather-app%2B5Dto_ESyR9%22,%22EXKernelDisableNuxDefaultsKey%22:true%7D&osVersion=10.0', '1. Weather App');
   weatherapp.position(230, 540);
-  attendanceapp = createA('google.com', '2. Attendance App');
-  attendanceapp.position(225, 570);
-  covid19bot = createA('google.com', '3. COVID-19 Chatbot');
-  covid19bot.position(215, 600);
+  qbp = createA('https://appetize.io/embed/xc1w6f1krd589zhp22a0mgftyw?autoplay=false&debug=true&device=pixel4&deviceColor=black&embed=true&launchUrl=exp:%2F%2Fexp.host%2F@gandhiatharv%2Fquiz-buzzer-participant-app%2BsC1SaPuWpq&orientation=portrait&scale=81&screenOnly=false&xDocMsg=true&xdocMsg=true&params=%7B%22EXDevMenuDisableAutoLaunch%22:true,%22EXKernelLaunchUrlDefaultsKey%22:%22exp:%2F%2Fexp.host%2F@gandhiatharv%2Fquiz-buzzer-participant-app%2BsC1SaPuWpq%22,%22EXKernelDisableNuxDefaultsKey%22:true%7D&osVersion=10.0', '2. Quiz Buzzer Participant App');
+  qbp.position(190, 570);
+  qba = createA('https://appetize.io/embed/xc1w6f1krd589zhp22a0mgftyw?autoplay=false&debug=true&device=pixel4&deviceColor=black&embed=true&launchUrl=exp:%2F%2Fexp.host%2F@gandhiatharv%2Fquiz-buzzer-admin-app%2BbNoq!vVnJa&orientation=portrait&scale=81&screenOnly=false&xDocMsg=true&xdocMsg=true&params=%7B%22EXDevMenuDisableAutoLaunch%22:true,%22EXKernelLaunchUrlDefaultsKey%22:%22exp:%2F%2Fexp.host%2F@gandhiatharv%2Fquiz-buzzer-admin-app%2BbNoq!vVnJa%22,%22EXKernelDisableNuxDefaultsKey%22:true%7D&osVersion=10.0', '3. Quiz Buzzer Admin App');
+  qba.position(195, 600);
+  covid19bot = createA('https://bot.dialogflow.com/6599c99c-a4b1-4563-bce0-555ea9fcb8c4', '4. COVID-19 Chatbot');
+  covid19bot.position(210, 630);
 
   like = createSprite(260, 245);
   like.addImage(likeunclicked);
@@ -220,12 +256,40 @@ function setup(){
   dislike = createSprite(310, 245);
   dislike.addImage(dislikeunclicked);
   dislike.scale = 0.1;
+
+  mood = createSprite(290, 450);
+  mood.addImage(moodimg);
+  mood.scale = 0.3;
+
+  mood1 = createRadio();
+  mood1.option(' ');
+  mood1.option('  ');
+  mood1.position(80, 475);
+  mood1.style('width', '500px');
+  mood1.style('height', '0px');
+
 }
 
 
 
 function draw(){
-
+  if(hide8 === true){
+    mood1.hide();
+    mood.visible = false;
+  } else if (hide8 === false){
+    mood1.show();
+    mood.visible = true;
+  }
+  if(hide9 === true){
+    environmentalissues.hide();
+  } else if (hide9 === false){
+    environmentalissues.show();
+  }
+  if(mood1.value() === ' '){
+    selected = true;
+  } else if(mood1.value() === '  '){
+    selected = true;
+  }
 if(hide7 === true){
   like.visible = false;
   dislike.visible = false;
@@ -283,13 +347,15 @@ if(hide6 === true){
     covid19bot.hide();
 humanly.hide();
 weatherapp.hide();
-attendanceapp.hide();
+qbp.hide();
+qba.hide();
   } else if (hide5 === false){
     earthhero.show();
     humanly.show();
     weatherapp.show();
     covid19bot.show();
-    attendanceapp.show();
+    qbp.show();
+    qba.show();
   }
 if(hide === false){
   icon.visible = true;

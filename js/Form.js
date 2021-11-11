@@ -5,11 +5,11 @@ class Form {
     this.btn_settings = createButton("Settings");
     this.btn_login = createButton("Log In");
     this.btn_logout = createButton("Log Out");
-    this.btn_intro = createButton("My Experiences With Social Media");
+    this.btn_intro = createButton("Social Media Experiences");
     this.btn_rate = createButton("Rate This App");
     this.btn_education = createButton("Seek/Provide Education");
     this.btn_socialmedia = createButton("Social Media");
-    this.btn_environment = createButton("Talk About The Environment");
+    this.btn_environment = createButton("Spread Environmental Awareness");
     this.btn_otherapps = createButton("You May Also Like");
     this.btn_aboutus = createButton("About Us");
     this.btn_go = createButton("Login");
@@ -24,6 +24,10 @@ class Form {
     this.btn_home6 = createButton("Home");
     this.logintitle = createElement('h2');
     this.aboutustitle = createElement('h2');
+    this.environmenttitle = createElement('h2');
+    this.feelingdescription = createElement('h2');
+    this.environmentalissuedescription1 = createElement('h2');
+    this.environmentalissuedescription2 = createElement('h2');
     this.ratetitle = createElement('h2');
     this.settingstitle = createElement('h2');
     this.btn_resetprogress = createButton('Reset');
@@ -31,12 +35,20 @@ class Form {
     this.similartothistitle = createElement('h2');
     this.madebycreator = createElement('h2');
     this.btn_home1 = createButton('Home');
+    this.input_environment = createElement("textarea");
     this.socialmediatitle = createElement('h2');
+    this.environmentaldescription = createElement('h2');
     this.input_chat = createInput("").attribute("placeholder", "Post Something");
     this.btn_send = createButton("Send");
     this.btn_home5 = createButton("Home");
-    this.btn_submitfeedback = createButton('Submit Feedback');
+    this.btn_submitfeedback = createButton('Submit');
+    this.btn_submitexperiences = createButton('Submit');
+    this.btn_submitenvironment = createButton('Submit');
     this.input_feedback = createInput("").attribute("placeholder", "Share your experiences and feedback");
+    this.input_experiences = createInput("").attribute("placeholder", "Share your social media experiences")
+    this.experiencetitle = createElement('h2');
+    this.btn_home3 = createButton("Home");
+    this.btn_home9 = createButton("Home");
   }
   hide(){
     this.btn_intro.show();
@@ -62,6 +74,24 @@ this.btn_submitfeedback.hide();
 this.btn_home4.hide();
 hide7 = true;
   }
+  hidefunc3(){
+    this.input_experiences.hide();
+    this.btn_home3.hide();
+    this.experiencetitle.hide();
+    this.feelingdescription.hide();
+    this.btn_submitexperiences.hide();
+    hide8 = true;
+      }
+      hidefunc4(){
+        this.input_environment.hide();
+        this.environmenttitle.hide();
+        this.environmentaldescription.hide();
+        this.environmentalissuedescription1.hide();
+        this.environmentalissuedescription2.hide();
+        this.btn_home9.hide();
+        this.btn_submitenvironment.hide();
+        hide9 = true;
+          }
   enter() {
     hide = true;
     this.btn_intro.hide();
@@ -83,15 +113,61 @@ hide7 = true;
     this.title.show();
   }
   display(){
-   // form.enter();
+   //form.enter();
    this.input_feedback.hide();
 this.ratetitle.hide();
 this.btn_submitfeedback.hide();
 this.btn_home4.hide();
 hide7 = true;
+
+this.input_experiences.hide();
+this.btn_home3.hide();
+this.experiencetitle.hide();
+this.feelingdescription.hide();
+this.btn_submitexperiences.hide();
+hide8 = true;
+
+this.input_environment.hide();
+this.environmenttitle.hide();
+this.environmentaldescription.hide();
+this.environmentalissuedescription1.hide();
+this.environmentalissuedescription2.hide();
+this.btn_home9.hide();
+this.btn_submitenvironment.hide();
+hide9 = true;
+
+
     this.aboutustitle.html("About Us");
     this.aboutustitle.position(222, 155);
     this.aboutustitle.style('font-size', '30px');
+
+    this.environmenttitle.html("Spread Environmental Awareness");
+    this.environmenttitle.position(132, 155);
+    this.environmenttitle.style('font-size', '18px');
+
+    this.feelingdescription.html("How are you feeling today?");
+    this.feelingdescription.position(180, 215);
+    this.feelingdescription.style('font-size', '15px');
+    this.feelingdescription.style('color', 'black');
+
+    this.environmentaldescription.html("Describe issue's environmental impact");
+    this.environmentaldescription.position(136, 460);
+    this.environmentaldescription.style('font-size', '15px');
+    this.environmentaldescription.style('color', 'black');
+
+    this.environmentalissuedescription1.html("Select an environmental issue");
+    this.environmentalissuedescription1.position(165, 197);
+    this.environmentalissuedescription1.style('font-size', '15px');
+    this.environmentalissuedescription1.style('color', 'black');
+
+    this.environmentalissuedescription2.html("to bring awareness to.");
+    this.environmentalissuedescription2.position(190, 217);
+    this.environmentalissuedescription2.style('font-size', '15px');
+    this.environmentalissuedescription2.style('color', 'black');
+
+    this.experiencetitle.html("Social Media Experiences");
+    this.experiencetitle.position(150, 170);
+    this.experiencetitle.style('font-size', '21px');
 
     this.input_chat.position(135, 570);
     this.btn_send.position(350, 567.5);
@@ -103,8 +179,16 @@ hide7 = true;
     this.input_feedback.style('width', '245px');
     this.input_feedback.style('height', '130px')
 
+    this.input_environment.position(160, 500);
+    this.input_environment.style('width', '245px');
+    this.input_environment.style('height', '100px')
+
+    this.input_experiences.position(160, 515);
+    this.input_experiences.style('width', '245px');
+    this.input_experiences.style('height', '70px')
+
     this.youmayliketitle.html("You May Also Like");
-    this.youmayliketitle.position(162, 155);
+    this.youmayliketitle.position(145, 155);
     this.youmayliketitle.style('font-size', '30px');
 
     this.socialmediatitle.html("Social Media");
@@ -156,6 +240,16 @@ hide7 = true;
     this.btn_submitfeedback.style('font-size', '12px');
     this.btn_submitfeedback.style('width', '175px');
     this.btn_submitfeedback.style('height', '50px');
+
+    this.btn_submitenvironment.position(195, 614);
+    this.btn_submitenvironment.style('font-size', '12px');
+    this.btn_submitenvironment.style('width', '175px');
+    this.btn_submitenvironment.style('height', '50px');
+
+    this.btn_submitexperiences.position(195, 599);
+    this.btn_submitexperiences.style('font-size', '12px');
+    this.btn_submitexperiences.style('width', '175px');
+    this.btn_submitexperiences.style('height', '50px');
 
     this.btn_go.hide();
     this.btn_home2.hide();
@@ -218,6 +312,22 @@ hide7 = true;
     this.btn_home4.style('font-size', '7px');
     this.btn_home4.style('background-color', '#FFD580');
 
+    this.btn_home3.position(375, 630);
+    this.btn_home3.style('border-radius', '25%');
+    this.btn_home3.style('border', '2px dashed black')
+    this.btn_home3.style('width', '50px');
+    this.btn_home3.style('height', '25px');
+    this.btn_home3.style('font-size', '7px');
+    this.btn_home3.style('background-color', '#FFD580');
+
+    this.btn_home9.position(375, 630);
+    this.btn_home9.style('border-radius', '25%');
+    this.btn_home9.style('border', '2px dashed black')
+    this.btn_home9.style('width', '50px');
+    this.btn_home9.style('height', '25px');
+    this.btn_home9.style('font-size', '7px');
+    this.btn_home9.style('background-color', '#FFD580');
+
     this.btn_home8.position(375, 625);
     this.btn_home8.style('border-radius', '25%');
     this.btn_home8.style('border', '2px dashed black')
@@ -235,9 +345,9 @@ hide7 = true;
     this.btn_home5.style('background-color', '#FFD580');
 
     this.btn_resetprogress.position(292, 585);
-    this.btn_resetprogress.style('width', '10%');
-    this.btn_resetprogress.style('height', '4.5%')
-    this.btn_resetprogress.style('font-size', '7px');
+    this.btn_resetprogress.style('width', '150px');
+    this.btn_resetprogress.style('height', '35px')
+    this.btn_resetprogress.style('font-size', '10px');
 
     this.btn_logout.position(345, 130);
     this.btn_logout.style('background-color', 'lightgray');
@@ -323,6 +433,27 @@ hide7 = true;
             hide5 = true;
                 });
 
+                this.btn_environment.mousePressed(()=>{
+                  form.enter();
+                this.input_environment.show();
+this.environmenttitle.show();
+this.environmentaldescription.show();
+this.environmentalissuedescription1.show();
+this.environmentalissuedescription2.show();
+this.btn_home9.show();
+this.btn_submitenvironment.show();
+hide9 = false;
+});
+
+                this.btn_intro.mousePressed(()=>{
+                  form.enter();
+                this.input_experiences.show();
+this.btn_home3.show();
+this.experiencetitle.show();
+this.feelingdescription.show();
+this.btn_submitexperiences.show();
+hide8 = false;
+});
                 this.btn_otherapps.mousePressed(()=>{
                   form.enter();
                   this.btn_home1.show();
@@ -380,11 +511,95 @@ hide7 = true;
             hide4 = false;
                 });
 
+                this.btn_submitenvironment.mousePressed(()=>{
+                  if(this.input_environment.value().length<1 || this.input_environment.value()===""){
+                    swal({
+                      confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
+                      text: 'Failed submitting your environmental awareness message. Please fill out all inputs.',
+                      type: "error",
+                      showConfirmButton: false,
+                      timer: 4000
+                    }
+                      )
+                  } else if(this.input_environment.value()<=0||this.input_environment.value()>=0){
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
+                    text: 'Failed submitting your environmental awareness message. Please fill out all inputs with accurate information.',
+                    type: "error",
+                    showConfirmButton: false,
+                    timer: 4000
+                  }
+                    )
+                } else if(this.input_environment.value().length>=1 && this.input_environment.value()!==""){
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
+                    text: 'You have successfully submitted your environmental awareness message.',
+                    type: "success",
+                    showConfirmButton: true,
+                    confirmButtonText: "Home"
+                  },
+                  function(isConfirm) {
+                    if (isConfirm) {
+                      form.show();
+                      form.hidefunc4();
+                    }
+                  }
+                    )
+                  
+                  }
+                      });
+
+                this.btn_submitexperiences.mousePressed(()=>{
+                  if(this.input_experiences.value().length<1 || this.input_experiences.value()===""){
+                    swal({
+                      confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
+                      text: 'Failed submitting your experiences. Please fill out all inputs.',
+                      type: "error",
+                      showConfirmButton: false,
+                      timer: 4000
+                    }
+                      )
+                  } else if(this.input_experiences.value()<=0||this.input_experiences.value()>=0){
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
+                    text: 'Failed submitting your experiences. Please fill out all inputs with accurate information.',
+                    type: "error",
+                    showConfirmButton: false,
+                    timer: 4000
+                  }
+                    )
+                } else if(selected === false){
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
+                    text: 'Failed submitting your experiences. Please say how you are feeling today.',
+                    type: "error",
+                    showConfirmButton: false,
+                    timer: 4000
+                  }
+                    )
+                } else if(selected===true&& this.input_experiences.value().length>=1 && this.input_experiences.value()!==""){
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
+                    text: 'You have successfully submitted your experiences.',
+                    type: "success",
+                    showConfirmButton: true,
+                    confirmButtonText: "Home"
+                  },
+                  function(isConfirm) {
+                    if (isConfirm) {
+                      form.show();
+                      form.hidefunc3();                    }
+                  }
+                    )
+                  
+                  }
+                      });
+
                 this.btn_submitfeedback.mousePressed(()=>{
                   if(this.input_feedback.value().length<1 || this.input_feedback.value()===""){
                     swal({
-                      confirmButtonColor: '#8CD4F5', title: `Unsuccessful Login`,
-                      text: 'Failed logging you in. Please fill out all inputs.',
+                      confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
+                      text: 'Failed submitting your review. Please fill out all inputs.',
                       type: "error",
                       showConfirmButton: false,
                       timer: 4000
@@ -392,8 +607,8 @@ hide7 = true;
                       )
                   } else if(this.input_feedback.value()<=0||this.input_feedback.value()>=0){
                   swal({
-                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Login`,
-                    text: 'Failed logging you in. Please fill out all inputs with accurate information.',
+                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
+                    text: 'Failed submitting your review. Please fill out all inputs with accurate information.',
                     type: "error",
                     showConfirmButton: false,
                     timer: 4000
@@ -401,8 +616,8 @@ hide7 = true;
                     )
                 } else if(clicked === "nothing"){
                   swal({
-                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Login`,
-                    text: 'Failed logging you in. Please rate this app.',
+                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
+                    text: 'Failed submitting your review. Please rate this app.',
                     type: "error",
                     showConfirmButton: false,
                     timer: 4000
@@ -410,8 +625,8 @@ hide7 = true;
                     )
                 } else if(clicked!=="nothing"&& this.input_feedback.value().length>=1 && this.input_feedback.value()!==""){
                   swal({
-                    confirmButtonColor: '#8CD4F5', title: `Successfully Logged In`,
-                    text: 'You are successfully logged in.',
+                    confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
+                    text: 'You have successfully submitted your review.',
                     type: "success",
                     showConfirmButton: true,
                     confirmButtonText: "Home"
@@ -431,7 +646,14 @@ hide7 = true;
                         form.show();
                         form.hidefunc2();
                             });
-
+                            this.btn_home3.mousePressed(()=>{
+                              form.show();
+                              form.hidefunc3();
+                                  });
+                                  this.btn_home9.mousePressed(()=>{
+                                  form.show();
+                                  form.hidefunc4();
+                                });
                             this.btn_rate.mousePressed(()=>{
                               form.enter();
                               this.input_feedback.show();
