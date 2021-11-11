@@ -29,36 +29,35 @@ var tries = 1;
 var clicked = "nothing";
 var like, dislike, likeunclicked, dislikeunclicked, likeclicked, dislikeclicked;
 var aboutmetext, aboutmetextimg;
-let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, qbp, qpa, mood1, environmentalissues;
+let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, qbp, qpa, mood1, environmentalissues, capture;
 var mood, moodimg;
 
-//START HERE
-//textarea instead of text input
-//center titles of screens
-//END HERE
+/*
+MUST DO:
+center text of screens
+ADD SOUNDS & ADDS TO FINAL APP
+slow down ads (600%)
+title position & font size = same
+ONE COLOR SCHEME FOR APP
+make all titles and home buttons the same font size and size and position
+use icons for buttons like home buttons
+console.log when buttons are clicked
+ALIGN ELEMENTS NICELY & MAKE ALL BUTTONS SAME WIDTH & HEIGHT
+MAKE BUTTON FONT SIZES BIGGER
+DECIDE IF I WANT LOGIN, SETTINGS, & ABOUT US BUTTONS ON EVERY PAGE (IF SO, DECIDE HOW I WILL HAVE BUTTONS THAT TAKE USER HOME AN BACK ON THOSE SCREENS)
+*/
 
-//ADD SOUNDS & ADDS TO FINAL APP
-//display time
-//title position & font size = same
-//same border radius for all elements
-//ONE COLOR SCHEME FOR APP
-//when press home icon you hide everything and take it to home screen
-//shorten button text
-//make all titles and home buttons the same font size and size and position
-//covid19 bot
-//use icons for buttons like home buttons
+/*
+OPTIONAL:
+display time
+see if i want to have a camera
+same border radius for all elements
+when press home icon you hide everything and take it to home screen
+update covid-19 bot small talk
+swal animations
 //when you are on one screen, you shouldn't be receiving swal notifications from another one (ex. you cannot be recieving a report message when you are on environmental screen)
-//console.log when buttons are clicked
-//ALIGN ELEMENTS NICELY & MAKE ALL BUTTONS SAME WIDTH & HEIGHT
-//MAKE BUTTON FONT SIZES BIGGER
-//DECIDE IF I WANT LOGIN, SETTINGS, & ABOUT US BUTTONS ON EVERY PAGE (IF SO, DECIDE HOW I WILL HAVE BUTTONS THAT TAKE USER HOME AN BACK ON THOSE SCREENS)
-//ON 'MORE LIKE THIS' PAGE MAKE LINKS GO TO MY APPS (CREATE LINKS BY USING https://p5js.org/reference/#/p5/createA)
-//CREATE VIDEOS, AUDIOS , sliders, dropdowns, AND CAMERA, radios, checkbox, file input, button, and other components USING ATTACHED LINK (https://p5js.org/reference/)
-//BRIGHTNESS, VOLUME, DARK MODE, LANGUAGE SELECTION
-//USE NAMES THAT ARE IN THE LOGIN INPUT THAT THE USER FILLED OUT
-//BEFORE LOGGING IN AND AFTER LOGGING OUT THE USER'S NAME, PASSWORD, EMAIL, AND LAST NAME ARE NOTHING/ANONYMOUS
-//NAMES CANNOT BE REPEATED
-//YOU CANNOT PERFORM ANY ACTIONS UNTIL ADD IS CLOSED (PLAY THE WINDOWS ERROR NOISE WHEN A PERSON TRIES TO PERFORM AN ACTION WITH AN AD GOING ON)
+NAMES CANNOT BE REPEATED
+*/
 
 function preload(){
   iphoneImg = loadImage("images/iphone.png");
@@ -264,15 +263,20 @@ function setup(){
   mood1 = createRadio();
   mood1.option(' ');
   mood1.option('  ');
-  mood1.position(80, 475);
+  mood1.position(80, 470);
   mood1.style('width', '500px');
   mood1.style('height', '0px');
 
+  /*capture = createCapture(VIDEO);
+  capture.hide();*/
 }
 
 
 
 function draw(){
+  /*image(capture, 0, 0, width, width * capture.height / capture.width);
+  filter(INVERT);*/
+
   if(hide8 === true){
     mood1.hide();
     mood.visible = false;

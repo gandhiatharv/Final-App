@@ -7,10 +7,11 @@ class Form {
     this.btn_logout = createButton("Log Out");
     this.btn_intro = createButton("Social Media Experiences");
     this.btn_rate = createButton("Rate This App");
-    this.btn_education = createButton("Seek/Provide Education");
+    this.btn_education = createButton("Provide/Seek Education");
     this.btn_socialmedia = createButton("Social Media");
     this.btn_environment = createButton("Spread Environmental Awareness");
     this.btn_otherapps = createButton("You May Also Like");
+    this.educationtitle = createElement('h2');
     this.btn_aboutus = createButton("About Us");
     this.btn_go = createButton("Login");
     this.btn_fakehome = createButton("");
@@ -38,17 +39,22 @@ class Form {
     this.input_environment = createElement("textarea");
     this.socialmediatitle = createElement('h2');
     this.environmentaldescription = createElement('h2');
+    this.feedbackdescription = createElement('h2');
+    this.experiencedescription = createElement('h2');
     this.input_chat = createInput("").attribute("placeholder", "Post Something");
     this.btn_send = createButton("Send");
     this.btn_home5 = createButton("Home");
-    this.btn_submitfeedback = createButton('Submit');
-    this.btn_submitexperiences = createButton('Submit');
+    this.btn_submitfeedback = createButton('Submit Feedback');
+    this.btn_submitexperiences = createButton('Submit Experiences');
     this.btn_submitenvironment = createButton('Submit');
-    this.input_feedback = createInput("").attribute("placeholder", "Share your experiences and feedback");
-    this.input_experiences = createInput("").attribute("placeholder", "Share your social media experiences")
+    this.input_feedback = createElement("textarea");
+    this.input_experiences = createElement("textarea");
     this.experiencetitle = createElement('h2');
     this.btn_home3 = createButton("Home");
     this.btn_home9 = createButton("Home");
+    this.btn_provideeducation = createButton("Provide Education");
+    this.btn_seekeducation = createButton("Seek Education");
+    this.provideeducationtitle //stopped
   }
   hide(){
     this.btn_intro.show();
@@ -71,11 +77,13 @@ class Form {
 this.input_feedback.hide();
 this.ratetitle.hide();
 this.btn_submitfeedback.hide();
+this.feedbackdescription.hide();
 this.btn_home4.hide();
 hide7 = true;
   }
   hidefunc3(){
     this.input_experiences.hide();
+    this.experiencedescription.hide();
     this.btn_home3.hide();
     this.experiencetitle.hide();
     this.feelingdescription.hide();
@@ -113,14 +121,16 @@ hide7 = true;
     this.title.show();
   }
   display(){
-   //form.enter();
+   form.enter();
    this.input_feedback.hide();
 this.ratetitle.hide();
 this.btn_submitfeedback.hide();
+this.feedbackdescription.hide();
 this.btn_home4.hide();
 hide7 = true;
 
 this.input_experiences.hide();
+this.experiencedescription.hide();
 this.btn_home3.hide();
 this.experiencetitle.hide();
 this.feelingdescription.hide();
@@ -141,6 +151,18 @@ hide9 = true;
     this.aboutustitle.position(222, 155);
     this.aboutustitle.style('font-size', '30px');
 
+    this.educationtitle.html("Provide/Seek Education");
+    this.educationtitle.position(137, 155);
+    this.educationtitle.style('font-size', '28px');
+
+    this.btn_provideeducation.position(155, 430);
+    this.btn_provideeducation.style('width', '270px');
+    this.btn_provideeducation.style('height', '90px');
+
+    this.btn_seekeducation.position(155, 530);
+    this.btn_seekeducation.style('width', '270px');
+    this.btn_seekeducation.style('height', '90px');
+
     this.environmenttitle.html("Spread Environmental Awareness");
     this.environmenttitle.position(132, 155);
     this.environmenttitle.style('font-size', '18px');
@@ -154,6 +176,16 @@ hide9 = true;
     this.environmentaldescription.position(136, 460);
     this.environmentaldescription.style('font-size', '15px');
     this.environmentaldescription.style('color', 'black');
+
+    this.feedbackdescription.html("Share your experiences and feedback");
+    this.feedbackdescription.position(162, 420);
+    this.feedbackdescription.style('font-size', '15px');
+    this.feedbackdescription.style('color', 'black');
+
+    this.experiencedescription.html("Share your social media experiences (if any)");
+    this.experiencedescription.position(142, 490);
+    this.experiencedescription.style('font-size', '15px');
+    this.experiencedescription.style('color', 'black');
 
     this.environmentalissuedescription1.html("Select an environmental issue");
     this.environmentalissuedescription1.position(165, 197);
@@ -175,17 +207,17 @@ hide9 = true;
     this.btn_send.style('font-size', '13px');
     this.btn_send.style('height', '40px')
 
-    this.input_feedback.position(160, 437);
+    this.input_feedback.position(160, 457);
     this.input_feedback.style('width', '245px');
-    this.input_feedback.style('height', '130px')
+    this.input_feedback.style('height', '110px')
 
     this.input_environment.position(160, 500);
     this.input_environment.style('width', '245px');
     this.input_environment.style('height', '100px')
 
-    this.input_experiences.position(160, 515);
+    this.input_experiences.position(160, 525);
     this.input_experiences.style('width', '245px');
-    this.input_experiences.style('height', '70px')
+    this.input_experiences.style('height', '60px')
 
     this.youmayliketitle.html("You May Also Like");
     this.youmayliketitle.position(145, 155);
@@ -259,7 +291,7 @@ hide9 = true;
     this.input_email.hide();
     this.input_password.hide();
 
-    this.title.html("App Title");
+    this.title.html("Together");
     this.title.position(195, 140);
     this.logintitle.html("Log In");
     this.logintitle.position(242, 145);
@@ -433,6 +465,12 @@ hide9 = true;
             hide5 = true;
                 });
 
+                this.btn_provideeducation.mousePressed(()=>{
+                  this.btn_provideeducation.hide();
+                  this.btn_seekeducation.hide();
+                  this.educationtitle.hide();
+                      });
+
                 this.btn_environment.mousePressed(()=>{
                   form.enter();
                 this.input_environment.show();
@@ -448,6 +486,7 @@ hide9 = false;
                 this.btn_intro.mousePressed(()=>{
                   form.enter();
                 this.input_experiences.show();
+                this.experiencedescription.show();
 this.btn_home3.show();
 this.experiencetitle.show();
 this.feelingdescription.show();
@@ -568,16 +607,7 @@ hide8 = false;
                     timer: 4000
                   }
                     )
-                } else if(selected === false){
-                  swal({
-                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
-                    text: 'Failed submitting your experiences. Please say how you are feeling today.',
-                    type: "error",
-                    showConfirmButton: false,
-                    timer: 4000
-                  }
-                    )
-                } else if(selected===true&& this.input_experiences.value().length>=1 && this.input_experiences.value()!==""){
+                }else if(this.input_experiences.value().length>=1 && this.input_experiences.value()!==""){
                   swal({
                     confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
                     text: 'You have successfully submitted your experiences.',
@@ -614,16 +644,7 @@ hide8 = false;
                     timer: 4000
                   }
                     )
-                } else if(clicked === "nothing"){
-                  swal({
-                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
-                    text: 'Failed submitting your review. Please rate this app.',
-                    type: "error",
-                    showConfirmButton: false,
-                    timer: 4000
-                  }
-                    )
-                } else if(clicked!=="nothing"&& this.input_feedback.value().length>=1 && this.input_feedback.value()!==""){
+                } else if(this.input_feedback.value().length>=1 && this.input_feedback.value()!==""){
                   swal({
                     confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
                     text: 'You have successfully submitted your review.',
@@ -659,6 +680,7 @@ hide8 = false;
                               this.input_feedback.show();
                               this.ratetitle.show();
                               this.btn_submitfeedback.show();
+                              this.feedbackdescription.show();
                               this.btn_home4.show();
                               hide7 = false;                                  });
 
