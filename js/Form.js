@@ -10,7 +10,7 @@ class Form {
     this.btn_education = createButton("Seek/Provide Education");
     this.btn_socialmedia = createButton("Social Media");
     this.btn_environment = createButton("Talk About The Environment");
-    this.btn_otherapps = createButton("More Like This");
+    this.btn_otherapps = createButton("You May Also Like");
     this.btn_aboutus = createButton("About Us");
     this.btn_go = createButton("Login");
     this.btn_fakehome = createButton("");
@@ -19,12 +19,24 @@ class Form {
     this.input_email = createInput("").attribute("placeholder", "Username");
     this.input_password = createInput("").attribute("placeholder", "Password");
     this.btn_home2 = createButton("Home");
+    this.btn_home4 = createButton("Home");
     this.btn_home8 = createButton("Home");
     this.btn_home6 = createButton("Home");
     this.logintitle = createElement('h2');
     this.aboutustitle = createElement('h2');
+    this.ratetitle = createElement('h2');
     this.settingstitle = createElement('h2');
     this.btn_resetprogress = createButton('Reset');
+    this.youmayliketitle = createElement('h2');
+    this.similartothistitle = createElement('h2');
+    this.madebycreator = createElement('h2');
+    this.btn_home1 = createButton('Home');
+    this.socialmediatitle = createElement('h2');
+    this.input_chat = createInput("").attribute("placeholder", "Post Something");
+    this.btn_send = createButton("Send");
+    this.btn_home5 = createButton("Home");
+    this.btn_submitfeedback = createButton('Submit Feedback');
+    this.input_feedback = createInput("").attribute("placeholder", "Share your experiences and feedback");
   }
   hide(){
     this.btn_intro.show();
@@ -42,6 +54,13 @@ class Form {
     this.input_email.hide();
     this.input_password.hide();
     hide = false;  
+  }
+  hidefunc2(){
+this.input_feedback.hide();
+this.ratetitle.hide();
+this.btn_submitfeedback.hide();
+this.btn_home4.hide();
+hide7 = true;
   }
   enter() {
     hide = true;
@@ -64,15 +83,58 @@ class Form {
     this.title.show();
   }
   display(){
-    //form.enter();
+   // form.enter();
+   this.input_feedback.hide();
+this.ratetitle.hide();
+this.btn_submitfeedback.hide();
+this.btn_home4.hide();
+hide7 = true;
     this.aboutustitle.html("About Us");
     this.aboutustitle.position(222, 155);
     this.aboutustitle.style('font-size', '30px');
 
+    this.input_chat.position(135, 570);
+    this.btn_send.position(350, 567.5);
+    this.btn_send.style('width', '90px');
+    this.btn_send.style('font-size', '13px');
+    this.btn_send.style('height', '40px')
+
+    this.input_feedback.position(160, 437);
+    this.input_feedback.style('width', '245px');
+    this.input_feedback.style('height', '130px')
+
+    this.youmayliketitle.html("You May Also Like");
+    this.youmayliketitle.position(162, 155);
+    this.youmayliketitle.style('font-size', '30px');
+
+    this.socialmediatitle.html("Social Media");
+    this.socialmediatitle.position(197, 155);
+    this.socialmediatitle.style('font-size', '30px');
+
+    this.similartothistitle.html("Similar To This");
+    this.similartothistitle.position(210, 215);
+    this.similartothistitle.style('font-size', '20px');
+    this.similartothistitle.style('color', 'red');
+
+    this.madebycreator.html("By The Same Creator");
+    this.madebycreator.position(190, 485);
+    this.madebycreator.style('font-size', '20px');
+    this.madebycreator.style('color', 'red');
+
+    this.similartothistitle.style('color', 'red');
 
     this.settingstitle.html("Settings");
     this.settingstitle.position(232, 155);
     this.settingstitle.style('font-size', '30px');
+
+    this.ratetitle.html("Rate This App");
+    this.ratetitle.position(192, 155);
+    this.ratetitle.style('font-size', '30px');
+
+    this.btn_home1.hide();
+    this.youmayliketitle.hide();
+    this.similartothistitle.hide();
+    this.madebycreator.hide();
 
     hide1 = true;
     hide2 = true;
@@ -90,6 +152,10 @@ class Form {
     this.input_password.style('width', '220px');
     this.btn_go.position(205, 580);
     this.btn_logout.hide();
+    this.btn_submitfeedback.position(195, 583);
+    this.btn_submitfeedback.style('font-size', '12px');
+    this.btn_submitfeedback.style('width', '175px');
+    this.btn_submitfeedback.style('height', '50px');
 
     this.btn_go.hide();
     this.btn_home2.hide();
@@ -128,6 +194,14 @@ class Form {
     this.btn_home2.style('font-size', '7px');
     this.btn_home2.style('background-color', '#FFD580');
 
+    this.btn_home1.position(375, 615);
+    this.btn_home1.style('border-radius', '25%');
+    this.btn_home1.style('border', '2px dashed black')
+    this.btn_home1.style('width', '50px');
+    this.btn_home1.style('height', '50px');
+    this.btn_home1.style('font-size', '7px');
+    this.btn_home1.style('background-color', '#FFD580');
+
     this.btn_home6.position(375, 630);
     this.btn_home6.style('border-radius', '25%');
     this.btn_home6.style('border', '2px dashed black')
@@ -136,6 +210,14 @@ class Form {
     this.btn_home6.style('font-size', '7px');
     this.btn_home6.style('background-color', '#FFD580');
 
+    this.btn_home4.position(375, 630);
+    this.btn_home4.style('border-radius', '25%');
+    this.btn_home4.style('border', '2px dashed black')
+    this.btn_home4.style('width', '50px');
+    this.btn_home4.style('height', '25px');
+    this.btn_home4.style('font-size', '7px');
+    this.btn_home4.style('background-color', '#FFD580');
+
     this.btn_home8.position(375, 625);
     this.btn_home8.style('border-radius', '25%');
     this.btn_home8.style('border', '2px dashed black')
@@ -143,6 +225,14 @@ class Form {
     this.btn_home8.style('height', '40px');
     this.btn_home8.style('font-size', '7px');
     this.btn_home8.style('background-color', '#FFD580');
+
+    this.btn_home5.position(370, 620);
+    this.btn_home5.style('border-radius', '25%');
+    this.btn_home5.style('border', '2px dashed black')
+    this.btn_home5.style('width', '50px');
+    this.btn_home5.style('height', '45px');
+    this.btn_home5.style('font-size', '8px');
+    this.btn_home5.style('background-color', '#FFD580');
 
     this.btn_resetprogress.position(292, 585);
     this.btn_resetprogress.style('width', '10%');
@@ -224,6 +314,64 @@ class Form {
       hide = false;  
           });
 
+          this.btn_home1.mousePressed(()=>{
+            form.show();
+            this.btn_home1.hide();
+            this.youmayliketitle.hide();
+            this.similartothistitle.hide();
+            this.madebycreator.hide();
+            hide5 = true;
+                });
+
+                this.btn_otherapps.mousePressed(()=>{
+                  form.enter();
+                  this.btn_home1.show();
+                  this.youmayliketitle.show();
+                  this.similartothistitle.show();
+                  this.madebycreator.show();
+                  hide5 = false;
+                      });
+
+                      this.btn_send.mousePressed(()=>{
+                        if(this.input_chat.value().length>=1 && this.input_chat.value()!==""){
+                          if(CM1!==""&&CM2!==""&&CM3!==""&&CM4!==""&&CM5!==""&&CM6!==""){
+                              CM1 = CM2;
+                              CM2 = CM3;
+                              CM3 = CM4;
+                              CM4 = CM5;
+                              CM5 = CM6;
+                              CM6 = name + ": "+this.input_chat.value();
+                              Player.updateMessage1(CM1);
+                              Player.updateMessage2(CM2);
+                              Player.updateMessage3(CM3);
+                              Player.updateMessage4(CM4);
+                              Player.updateMessage5(CM5);
+                              Player.updateMessage6(CM6);
+                          }else{
+                            if(CM1 ===""){
+                      CM1 = name + ": "+this.input_chat.value();
+                    Player.updateMessage1(CM1);
+                    } else if(CM2 ===""&&CM1!==""){
+                      CM2 = name + ": "+this.input_chat.value();
+                    Player.updateMessage2(CM2);
+                    }else if(CM3 ===""&&CM2!==""&&CM1!==""){
+                      CM3 = name + ": "+this.input_chat.value();
+                    Player.updateMessage3(CM3);
+                    }else if(CM4 ===""&&CM3!==""&&CM2!==""&&CM1!==""){
+                      CM4 = name + ": "+this.input_chat.value();
+                    Player.updateMessage4(CM4);
+                    }else if(CM5 ===""&&CM4!==""&&CM3!==""&&CM2!==""&&CM1!==""){
+                      CM5 = name + ": "+this.input_chat.value();
+                    Player.updateMessage5(CM5);
+                    }else if(CM6 ===""&&CM5 !==""&&CM4!==""&&CM3!==""&&CM2!==""&&CM1!==""){
+                      CM6 = name + ": "+this.input_chat.value();
+                      Player.updateMessage6(CM6);
+                      }
+                  }
+                        }
+                      });
+                  
+
           this.btn_settings.mousePressed(()=>{
             form.enter();
             this.btn_resetprogress.show();
@@ -232,7 +380,66 @@ class Form {
             hide4 = false;
                 });
 
-                
+                this.btn_submitfeedback.mousePressed(()=>{
+                  if(this.input_feedback.value().length<1 || this.input_feedback.value()===""){
+                    swal({
+                      confirmButtonColor: '#8CD4F5', title: `Unsuccessful Login`,
+                      text: 'Failed logging you in. Please fill out all inputs.',
+                      type: "error",
+                      showConfirmButton: false,
+                      timer: 4000
+                    }
+                      )
+                  } else if(this.input_feedback.value()<=0||this.input_feedback.value()>=0){
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Login`,
+                    text: 'Failed logging you in. Please fill out all inputs with accurate information.',
+                    type: "error",
+                    showConfirmButton: false,
+                    timer: 4000
+                  }
+                    )
+                } else if(clicked === "nothing"){
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Unsuccessful Login`,
+                    text: 'Failed logging you in. Please rate this app.',
+                    type: "error",
+                    showConfirmButton: false,
+                    timer: 4000
+                  }
+                    )
+                } else if(clicked!=="nothing"&& this.input_feedback.value().length>=1 && this.input_feedback.value()!==""){
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Successfully Logged In`,
+                    text: 'You are successfully logged in.',
+                    type: "success",
+                    showConfirmButton: true,
+                    confirmButtonText: "Home"
+                  },
+                  function(isConfirm) {
+                    if (isConfirm) {
+            form.show();
+            form.hidefunc2();
+                    }
+                  }
+                    )
+                  
+                  }
+                      });
+
+                      this.btn_home4.mousePressed(()=>{
+                        form.show();
+                        form.hidefunc2();
+                            });
+
+                            this.btn_rate.mousePressed(()=>{
+                              form.enter();
+                              this.input_feedback.show();
+                              this.ratetitle.show();
+                              this.btn_submitfeedback.show();
+                              this.btn_home4.show();
+                              hide7 = false;                                  });
+
          this.btn_home6.mousePressed(()=>{
             form.show();
             this.btn_resetprogress.hide();
@@ -265,7 +472,45 @@ class Form {
             hide2 = true;
             hide3 = true;
                 });
+
+                hide6 = true;
+                this.socialmediatitle.hide();
+                this.input_chat.hide();
+                this.btn_send.hide();
+                this.btn_home5.hide();
+
+                this.btn_home5.mousePressed(()=>{
+                  hide6 = true;
+                  this.socialmediatitle.hide();
+                  this.input_chat.hide();
+                  this.btn_send.hide();
+                  this.btn_intro.show();
+                  this.btn_education.show();
+                  this.btn_environment.show();
+                  this.btn_otherapps.show();
+                  this.btn_rate.show();
+                  this.btn_socialmedia.show();
+                  this.title.show();
+                  this.btn_home5.hide();
+                  hide = false;  
+                      });
                 
+                      this.btn_socialmedia.mousePressed(()=>{
+                        hide6 = false;
+                        this.socialmediatitle.show();
+                        this.input_chat.show();
+                        this.btn_send.show();
+                        this.btn_intro.hide();
+                        this.btn_education.hide();
+                        this.btn_environment.hide();
+                        this.btn_otherapps.hide();
+                        this.btn_rate.hide();
+                        this.btn_socialmedia.hide();
+                        this.title.hide();
+                        this.btn_home5.show();
+                        hide = true;  
+                            });
+
                 this.btn_resetprogress.mousePressed(()=>{
                   swal({
                     confirmButtonColor: '#8CD4F5', title: 'Are you sure you would like to reset your progress?',
@@ -379,6 +624,7 @@ hide = true;
     this.btn_logout.mousePressed(()=>{
       this.btn_logout.hide();
       this.btn_login.show();
+      name = "Anonymous";
           });
     this.btn_go.mousePressed(()=>{
     
@@ -403,6 +649,7 @@ hide = true;
     } else if(this.input_firstname.value().length>=1 && this.input_firstname.value()!==""&&this.input_lastname.value().length>=1 && this.input_lastname.value()!==""&&this.input_email.value().length>=1 && this.input_email.value()!==""&&this.input_password.value().length>=1 && this.input_password.value()!==""){
       this.btn_logout.show();
       this.btn_login.hide();
+      name = this.input_firstname.value() + " " + this.input_lastname.value();
       swal({
         confirmButtonColor: '#8CD4F5', title: `Successfully Logged In`,
         text: 'You are successfully logged in.',

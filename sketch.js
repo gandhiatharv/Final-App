@@ -15,11 +15,30 @@ var hide1 = false;
 var hide2 = false;
 var hide3 = false;
 var hide4 = true;
-var icon1, icon2;
+var hide5 = true;
+var hide6 = true;
+var hide7 = true;
+var name = "Anonymous";
+var CM1, CM2, CM3, CM4, CM5, CM6;
+var reported = false;
+var icon1, icon2, report, reportimg;
+var tries = 1;
+var clicked = "nothing";
+var like, dislike, likeunclicked, dislikeunclicked, likeclicked, dislikeclicked;
 var aboutmetext, aboutmetextimg;
-let brightness, volume, language, style, mode;
+let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, attendanceapp;
 
 //ADD SOUNDS & ADDS TO FINAL APP
+//ONE COLOR SCHEME FOR APP
+//shorten button text
+//make all titles and home buttons the same font size and size and position
+//covid19 bot
+//use icons for buttons like home buttons
+//when you are on one screen, you shouldn't be receiving swal notifications from another one (ex. you cannot be recieving a report message when you are on environmental screen)
+//console.log when buttons are clicked
+//ALIGN ELEMENTS NICELY & MAKE ALL BUTTONS SAME WIDTH & HEIGHT
+//MAKE BUTTON FONT SIZES BIGGER
+//DECIDE IF I WANT LOGIN, SETTINGS, & ABOUT US BUTTONS ON EVERY PAGE (IF SO, DECIDE HOW I WILL HAVE BUTTONS THAT TAKE USER HOME AN BACK ON THOSE SCREENS)
 //ON 'MORE LIKE THIS' PAGE MAKE LINKS GO TO MY APPS (CREATE LINKS BY USING https://p5js.org/reference/#/p5/createA)
 //CREATE VIDEOS, AUDIOS , sliders, dropdowns, AND CAMERA, radios, checkbox, file input, button, and other components USING ATTACHED LINK (https://p5js.org/reference/)
 //BRIGHTNESS, VOLUME, DARK MODE, LANGUAGE SELECTION
@@ -43,6 +62,11 @@ function preload(){
   aimg10 = loadImage("images/0010.jpg");
   closeimg = loadImage("images/close.png");
   aboutmetextimg = loadImage("images/aboutmetext.png");
+  reportimg = loadImage("images/report.png");
+  likeclicked = loadImage("images/likeclicked.png");
+  dislikeclicked = loadImage("images/dislikeclicked.png");
+  likeunclicked = loadImage("images/like.png");
+  dislikeunclicked = loadImage("images/dislike.png");
 }
 
 function setup(){
@@ -53,6 +77,9 @@ function setup(){
   iphone = createSprite(288, 430);
   iphone.addImage(iphoneImg);
   iphone.scale = 1.6;
+  report = createSprite(158, 640);
+  report.addImage(reportimg);
+  report.scale = 0.6;
   icon = createSprite(288, 355);
   icon.addImage(iconImg);
   icon.scale = 0.45;
@@ -174,11 +201,96 @@ function setup(){
   mode.option('Auto');
   mode.option('Light Mode');
   mode.option('Dark Mode');
+
+  earthhero = createA('https://play.google.com/store/apps/details?id=com.earthheroorg.earthhero&hl=en_US&gl=US', '1. Earth Hero');
+  earthhero.position(230, 440);
+  humanly = createA('https://play.google.com/store/apps/details?id=org.cyny.neighborly&hl=en_US&gl=US', '2. Humanly');
+  humanly.position(230, 470);
+  weatherapp = createA('google.com', '1. Weather App');
+  weatherapp.position(230, 540);
+  attendanceapp = createA('google.com', '2. Attendance App');
+  attendanceapp.position(225, 570);
+  covid19bot = createA('google.com', '3. COVID-19 Chatbot');
+  covid19bot.position(215, 600);
+
+  like = createSprite(260, 245);
+  like.addImage(likeunclicked);
+  like.scale = 0.1;
+
+  dislike = createSprite(310, 245);
+  dislike.addImage(dislikeunclicked);
+  dislike.scale = 0.1;
 }
 
 
 
 function draw(){
+
+if(hide7 === true){
+  like.visible = false;
+  dislike.visible = false;
+} else{
+  like.visible = true;
+  dislike.visible = true;
+}
+
+  if(mousePressedOver(like)){
+    like.addImage(likeclicked);
+    if(clicked = "dislike"){
+      dislike.addImage(dislikeunclicked);
+    }
+    clicked = "like";
+  }
+
+  if(mousePressedOver(dislike)){
+    dislike.addImage(dislikeclicked);
+    if(clicked = "like"){
+      like.addImage(likeunclicked);
+    }
+    clicked = "dislike";
+  }
+
+if(tries === 0){
+  if(frameCount%100 === 0){
+    Player.updateReported(false);
+    tries = 1;
+  }
+}
+
+if(hide6 === true){
+  report.visible = false;
+} else{
+  report.visible = true;
+}
+
+  game.play();
+  game.unactivateReport();
+
+  if(mousePressedOver(report)){
+    game.activateReport();
+      swal(
+        {
+          confirmButtonColor: '#8CD4F5', title: `Successfully Reported`,
+          text: "You have successfully reported inappropriate content.",
+          type:'success',
+          confirmButtonText: "Ok"
+        }
+      );
+     }
+
+  if(hide5 === true){
+    earthhero.hide();
+    covid19bot.hide();
+humanly.hide();
+weatherapp.hide();
+attendanceapp.hide();
+  } else if (hide5 === false){
+    earthhero.show();
+    humanly.show();
+    weatherapp.show();
+    covid19bot.show();
+    attendanceapp.show();
+  }
 if(hide === false){
   icon.visible = true;
 } else if (hide === true){
@@ -217,7 +329,7 @@ if(hide3 === false){
   icon2.visible = false;
 }
 
-  if(frameCount%600 === 0){
+  if(frameCount%1 === 0){
     rand = Math.round(random(1, 10));
       a1.visible = false;
   a2.visible = false;
@@ -311,8 +423,17 @@ close.visible = true;
   fill("black");
   textFont("Courier");
   strokeWeight(1);
-  textSize(15);
+  textSize(13);
   stroke(0);
+  if(hide6 === false){
+  text(CM1, 150, 255);
+  text(CM2, 150, 450);
+  text(CM3, 150, 475);
+  text(CM4, 150, 500);
+  text(CM5, 150, 525);
+  text(CM6, 150, 550);
+  }
+  textSize(15);
   if(hide4 === false){
   text("Brightness:", 150, 255);
   text(brightness.value(), 410, 255); 
