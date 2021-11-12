@@ -21,7 +21,9 @@ var selected = false;
 var hide7 = true;
 var hide8 = true;
 var hide9 = true;
+var hide10 = true;
 var name = "Anonymous";
+var loggedin = true;
 var CM1, CM2, CM3, CM4, CM5, CM6;
 var reported = false;
 var icon1, icon2, report, reportimg;
@@ -29,15 +31,15 @@ var tries = 1;
 var clicked = "nothing";
 var like, dislike, likeunclicked, dislikeunclicked, likeclicked, dislikeclicked;
 var aboutmetext, aboutmetextimg;
-let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, qbp, qpa, mood1, environmentalissues, capture;
+let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, qbp, qpa, mood1, environmentalissues, capture, subjects;
 var mood, moodimg;
 
 /*
 MUST DO:
 center text of screens
 ADD SOUNDS & ADDS TO FINAL APP
-slow down ads (600%)
 title position & font size = same
+make logggedin not true after testing
 ONE COLOR SCHEME FOR APP
 make all titles and home buttons the same font size and size and position
 use icons for buttons like home buttons
@@ -224,6 +226,28 @@ function setup(){
   style.option('Playful');
   style.selected('Basic');
 
+  subjects = createSelect();
+  subjects.position(170, 535);//stopped here //take age & gender
+  subjects.style('width', '17em')
+  subjects.option('What would you like to learn?');
+  subjects.option('ELA');
+  subjects.option('Math');
+  subjects.option('Science');
+  subjects.option('Social Studies');
+  subjects.option('Speaking Languages');
+  subjects.option('Computer Science');
+  subjects.option('Debate');
+  subjects.option('Sports');
+  subjects.option('Music');
+  subjects.option('Digital Design');
+  subjects.option('Technology Design');
+  subjects.option('Health');
+  subjects.option('Art');
+  subjects.option('Information Literacy');
+  subjects.selected('What would you like to learn?');
+  subjects.hide();
+  console.log(subjects.value());
+
   fill("black");
   textFont("Courier");
   strokeWeight(1);
@@ -399,7 +423,7 @@ if(hide3 === false){
   icon2.visible = false;
 }
 
-  if(frameCount%1 === 0){
+  if(frameCount%600 === 0){
     rand = Math.round(random(1, 10));
       a1.visible = false;
   a2.visible = false;
@@ -513,5 +537,18 @@ close.visible = true;
   text("Style:", 150, 530);
   text("Mode:", 150, 570);
   text("Reset Progress:", 150, 610);
+  }
+  if(hide10 === false){
+  text("Name:", 150, 450);
+  text("Email:", 150, 470);
+  text("Phone:", 150, 490);
+
+  text("Name:", 150, 530);
+  text("Email:", 150, 550);
+  text("Phone:", 150, 570);
+
+  text("Name:", 150, 610);
+  text("Email:", 150, 630);
+  text("Phone:", 150, 650);
   }
 }

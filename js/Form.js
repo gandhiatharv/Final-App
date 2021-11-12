@@ -29,6 +29,7 @@ class Form {
     this.feelingdescription = createElement('h2');
     this.environmentalissuedescription1 = createElement('h2');
     this.environmentalissuedescription2 = createElement('h2');
+    this.lifestyle = createInput("").attribute("placeholder", "Describe your lifestyle");
     this.ratetitle = createElement('h2');
     this.settingstitle = createElement('h2');
     this.btn_resetprogress = createButton('Reset');
@@ -42,6 +43,8 @@ class Form {
     this.feedbackdescription = createElement('h2');
     this.experiencedescription = createElement('h2');
     this.input_chat = createInput("").attribute("placeholder", "Post Something");
+    this.input_contactemail = createInput("").attribute("placeholder", "Email");
+    this.input_contactphone = createInput("").attribute("placeholder", "Phone Number");
     this.btn_send = createButton("Send");
     this.btn_home5 = createButton("Home");
     this.btn_submitfeedback = createButton('Submit Feedback');
@@ -55,6 +58,10 @@ class Form {
     this.btn_provideeducation = createButton("Provide Education");
     this.btn_seekeducation = createButton("Seek Education");
     this.provideeducationtitle = createElement('h2');
+    this.seekeducationtitle = createElement('h2');
+    this.provideeducationdescription = createElement('h2');
+    this.utilizeeducationdescription = createElement('h2');
+    this.utilizeeducation = createElement("textarea");
   }
   hide(){
     this.btn_intro.show();
@@ -121,13 +128,14 @@ hide7 = true;
     this.title.show();
   }
   display(){
-   form.enter();
+   //form.enter();
    this.input_feedback.hide();
 this.ratetitle.hide();
 this.btn_submitfeedback.hide();
 this.feedbackdescription.hide();
 this.btn_home4.hide();
 hide7 = true;
+
 
 this.input_experiences.hide();
 this.experiencedescription.hide();
@@ -159,7 +167,13 @@ hide9 = true;
     this.provideeducationtitle.position(153, 155);
     this.provideeducationtitle.style('font-size', '28px');
 
+    this.seekeducationtitle.html("Seek Education");
+    this.seekeducationtitle.position(153, 155);
+    this.seekeducationtitle.style('font-size', '28px');
+
     this.provideeducationtitle.hide();
+    this.seekeducationtitle.hide();
+    this.provideeducationdescription.hide();
 
     this.btn_provideeducation.position(155, 430);
     this.btn_provideeducation.style('width', '270px');
@@ -177,6 +191,16 @@ hide9 = true;
     this.feelingdescription.position(180, 215);
     this.feelingdescription.style('font-size', '15px');
     this.feelingdescription.style('color', 'black');
+
+    this.provideeducationdescription.html("People who seek education pop up below.");
+    this.provideeducationdescription.position(150, 215);
+    this.provideeducationdescription.style('font-size', '15px');
+    this.provideeducationdescription.style('color', 'black');
+
+    this.utilizeeducationdescription.html("Select what you want to learn");
+    this.utilizeeducationdescription.position(140, 530);
+    this.utilizeeducationdescription.style('font-size', '15px');
+    this.utilizeeducationdescription.style('color', 'black');
 
     this.environmentaldescription.html("Describe issue's environmental impact");
     this.environmentaldescription.position(136, 460);
@@ -410,6 +434,11 @@ hide9 = true;
     this.btn_environment.style('width', '130px');
     this.btn_environment.style('font-size', '8px');
 
+    this.input_contactemail.position(180, 228);
+    this.lifestyle.position(180, 485);
+    this.utilizeeducation.position(180, 600);
+    this.input_contactphone.position(180, 435);
+
     this.btn_socialmedia.position(293, 485);
     this.btn_socialmedia.style('height', '56px');
     this.btn_socialmedia.style('width', '130px');
@@ -474,9 +503,37 @@ hide9 = true;
                 this.btn_provideeducation.mousePressed(()=>{
                   this.btn_provideeducation.hide();
                   this.provideeducationtitle.show();
+                  this.provideeducationdescription.show();
+                  this.provideeducationdescription.show();
                   this.btn_seekeducation.hide();
                   this.educationtitle.hide();
                       });
+
+                     /*this.btn_seekeducation.mousePressed(()=>{
+                        if(loggedin === true){
+                        this.btn_provideeducation.hide();
+                        this.btn_seekeducation.hide();
+                        this.educationtitle.hide();
+                        this.seekeducationtitle.show();
+                        } else{
+                          swal({
+                            confirmButtonColor: '#8CD4F5', title: `Unsuccessful`,
+                            text: 'To seek education, you must be logged in.',
+                            type: "error",
+                            showConfirmButton: false,
+                            timer: 4000
+                          }
+                            )
+                        }
+                            });*/
+                            this.input_contactemail.hide();
+                            this.input_contactphone.hide();
+                            this.btn_provideeducation.hide();
+                            this.btn_seekeducation.hide();
+                            this.lifestyle.hide();
+                            this.utilizeeducationdescription.hide();
+                            this.utilizeeducation.hide();
+                            this.educationtitle.hide();
 
                 this.btn_environment.mousePressed(()=>{
                   form.enter();
@@ -876,6 +933,7 @@ hide = true;
       this.btn_logout.hide();
       this.btn_login.show();
       name = "Anonymous";
+      loggedin = false;
           });
     this.btn_go.mousePressed(()=>{
     
@@ -901,6 +959,7 @@ hide = true;
       this.btn_logout.show();
       this.btn_login.hide();
       name = this.input_firstname.value() + " " + this.input_lastname.value();
+      loggedin = true;
       swal({
         confirmButtonColor: '#8CD4F5', title: `Successfully Logged In`,
         text: 'You are successfully logged in.',
