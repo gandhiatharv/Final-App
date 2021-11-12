@@ -54,7 +54,7 @@ class Form {
     this.btn_home9 = createButton("Home");
     this.btn_provideeducation = createButton("Provide Education");
     this.btn_seekeducation = createButton("Seek Education");
-    this.provideeducationtitle //stopped
+    this.provideeducationtitle = createElement('h2');
   }
   hide(){
     this.btn_intro.show();
@@ -153,7 +153,13 @@ hide9 = true;
 
     this.educationtitle.html("Provide/Seek Education");
     this.educationtitle.position(137, 155);
-    this.educationtitle.style('font-size', '28px');
+    this.educationtitle.style('font-size', '24.5px');
+
+    this.provideeducationtitle.html("Provide Education");
+    this.provideeducationtitle.position(153, 155);
+    this.provideeducationtitle.style('font-size', '28px');
+
+    this.provideeducationtitle.hide();
 
     this.btn_provideeducation.position(155, 430);
     this.btn_provideeducation.style('width', '270px');
@@ -467,6 +473,7 @@ hide9 = true;
 
                 this.btn_provideeducation.mousePressed(()=>{
                   this.btn_provideeducation.hide();
+                  this.provideeducationtitle.show();
                   this.btn_seekeducation.hide();
                   this.educationtitle.hide();
                       });
