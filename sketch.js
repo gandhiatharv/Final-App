@@ -22,6 +22,7 @@ var hide7 = true;
 var hide8 = true;
 var hide9 = true;
 var hide10 = true;
+var scr = true;
 var name = "Anonymous";
 var loggedin = true;
 var CM1, CM2, CM3, CM4, CM5, CM6;
@@ -32,7 +33,7 @@ var clicked = "nothing";
 var like, dislike, likeunclicked, dislikeunclicked, likeclicked, dislikeclicked;
 var aboutmetext, aboutmetextimg;
 let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, qbp, qpa, mood1, environmentalissues, capture, subjects;
-var mood, moodimg;
+var mood, moodimg, home1, home2, home3, home4, home5, home6, home8, home9, homeimg;
 
 /*
 MUST DO:
@@ -82,6 +83,7 @@ function preload(){
   likeunclicked = loadImage("images/like.png");
   dislikeunclicked = loadImage("images/dislike.png");
   moodimg = loadImage("images/moods.png");
+  homeimg = loadImage("images/home.png");
 }
 
 function setup(){
@@ -290,6 +292,39 @@ function setup(){
   mood1.position(80, 470);
   mood1.style('width', '500px');
   mood1.style('height', '0px');
+
+  home1 = createSprite(435, 655);
+  home1.addImage(homeimg);
+  home1.scale = 0.05;
+  home2 = createSprite(435, 655);
+  home2.addImage(homeimg);
+  home2.scale = 0.05;
+  home3 = createSprite(435, 655);
+  home3.addImage(homeimg);
+  home3.scale = 0.05;
+  home4 = createSprite(435, 655);
+  home4.addImage(homeimg);
+  home4.scale = 0.05;
+  home5 = createSprite(435, 655);
+  home5.addImage(homeimg);
+  home5.scale = 0.05;
+  home6 = createSprite(435, 655);
+  home6.addImage(homeimg);
+  home6.scale = 0.05;
+  home8 = createSprite(435, 655);
+  home8.addImage(homeimg);
+  home8.scale = 0.05;
+  home9 = createSprite(435, 655);
+  home9.addImage(homeimg);
+  home9.scale = 0.05;
+  home1.visible = false;
+  home2.visible = false;
+  home3.visible = false;
+  home4.visible = false;
+  home5.visible = false;
+  home6.visible = false;
+  home8.visible = false;
+  home9.visible = false;
 
   /*capture = createCapture(VIDEO);
   capture.hide();*/
