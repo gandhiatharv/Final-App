@@ -22,6 +22,14 @@ var hide7 = true;
 var hide8 = true;
 var hide9 = true;
 var hide10 = true;
+var hide11 = true;
+var hide12 = true;
+var hide13 = true;
+var hide14 = true;
+var hide15 = true;
+var hide16 = true;
+var hide17 = true;
+var hide18 = true;
 var scr = true;
 var name = "Anonymous";
 var loggedin = true;
@@ -33,26 +41,27 @@ var clicked = "nothing";
 var like, dislike, likeunclicked, dislikeunclicked, likeclicked, dislikeclicked;
 var aboutmetext, aboutmetextimg;
 let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, qbp, qpa, mood1, environmentalissues, capture, subjects;
-var mood, moodimg, home1, home2, home3, home4, home5, home6, home8, home9, homeimg;
+var mood, moodimg, btn_home1, btn_home2, btn_home3, btn_home4, btn_home5, btn_home6, btn_home8, btn_home9, homeimg;
 
 /*
 MUST DO:
+ONE COLOR SCHEME FOR APP
+DECIDE IF I WANT LOGIN, SETTINGS, & ABOUT US BUTTONS ON EVERY PAGE (IF SO, DECIDE HOW I WILL HAVE BUTTONS THAT TAKE USER HOME AN BACK ON THOSE SCREENS)
 center text of screens
 ADD SOUNDS & ADDS TO FINAL APP
 title position & font size = same
+take out emoji radio and just make emojis different colors when you click them
 make logggedin not true after testing
-ONE COLOR SCHEME FOR APP
 make all titles and home buttons the same font size and size and position
-use icons for buttons like home buttons
-console.log when buttons are clicked
+console log when buttons are clicked
 ALIGN ELEMENTS NICELY & MAKE ALL BUTTONS SAME WIDTH & HEIGHT
 MAKE BUTTON FONT SIZES BIGGER
-DECIDE IF I WANT LOGIN, SETTINGS, & ABOUT US BUTTONS ON EVERY PAGE (IF SO, DECIDE HOW I WILL HAVE BUTTONS THAT TAKE USER HOME AN BACK ON THOSE SCREENS)
 */
 
 /*
 OPTIONAL:
 display time
+code education screen and make stuff in environmental screen go through database so that people can see each other's reports
 see if i want to have a camera
 same border radius for all elements
 when press home icon you hide everything and take it to home screen
@@ -94,9 +103,9 @@ function setup(){
   iphone = createSprite(288, 430);
   iphone.addImage(iphoneImg);
   iphone.scale = 1.6;
-  report = createSprite(158, 640);
+  report = createSprite(142, 655);
   report.addImage(reportimg);
-  report.scale = 0.6;
+  report.scale = 0.5;
   icon = createSprite(288, 355);
   icon.addImage(iconImg);
   icon.scale = 0.45;
@@ -248,7 +257,6 @@ function setup(){
   subjects.option('Information Literacy');
   subjects.selected('What would you like to learn?');
   subjects.hide();
-  console.log(subjects.value());
 
   fill("black");
   textFont("Courier");
@@ -293,38 +301,38 @@ function setup(){
   mood1.style('width', '500px');
   mood1.style('height', '0px');
 
-  home1 = createSprite(435, 655);
-  home1.addImage(homeimg);
-  home1.scale = 0.05;
-  home2 = createSprite(435, 655);
-  home2.addImage(homeimg);
-  home2.scale = 0.05;
-  home3 = createSprite(435, 655);
-  home3.addImage(homeimg);
-  home3.scale = 0.05;
-  home4 = createSprite(435, 655);
-  home4.addImage(homeimg);
-  home4.scale = 0.05;
-  home5 = createSprite(435, 655);
-  home5.addImage(homeimg);
-  home5.scale = 0.05;
-  home6 = createSprite(435, 655);
-  home6.addImage(homeimg);
-  home6.scale = 0.05;
-  home8 = createSprite(435, 655);
-  home8.addImage(homeimg);
-  home8.scale = 0.05;
-  home9 = createSprite(435, 655);
-  home9.addImage(homeimg);
-  home9.scale = 0.05;
-  home1.visible = false;
-  home2.visible = false;
-  home3.visible = false;
-  home4.visible = false;
-  home5.visible = false;
-  home6.visible = false;
-  home8.visible = false;
-  home9.visible = false;
+  btn_home1 = createSprite(435, 655);
+  btn_home1.addImage(homeimg);
+  btn_home1.scale = 0.05;
+  btn_home2 = createSprite(435, 655);
+  btn_home2.addImage(homeimg);
+  btn_home2.scale = 0.05;
+  btn_home3 = createSprite(435, 655);
+  btn_home3.addImage(homeimg);
+  btn_home3.scale = 0.05;
+  btn_home4 = createSprite(435, 655);
+  btn_home4.addImage(homeimg);
+  btn_home4.scale = 0.05;
+  btn_home5 = createSprite(435, 655);
+  btn_home5.addImage(homeimg);
+  btn_home5.scale = 0.05;
+  btn_home6 = createSprite(435, 655);
+  btn_home6.addImage(homeimg);
+  btn_home6.scale = 0.05;
+  btn_home8 = createSprite(435, 655);
+  btn_home8.addImage(homeimg);
+  btn_home8.scale = 0.05;
+  btn_home9 = createSprite(435, 655);
+  btn_home9.addImage(homeimg);
+  btn_home9.scale = 0.05;
+  btn_home1.visible = false;
+  btn_home2.visible = false;
+  btn_home3.visible = false;
+  btn_home4.visible = false;
+  btn_home5.visible = false;
+  btn_home6.visible = false;
+  btn_home8.visible = false;
+  btn_home9.visible = false;
 
   /*capture = createCapture(VIDEO);
   capture.hide();*/
@@ -335,6 +343,54 @@ function setup(){
 function draw(){
   /*image(capture, 0, 0, width, width * capture.height / capture.width);
   filter(INVERT);*/
+
+  if(hide11 === false){
+    btn_home1.visible = true;
+  } else{
+    btn_home1.visible = false;
+  }
+
+  if(hide12 === false){
+    btn_home2.visible = true;
+  } else{
+    btn_home2.visible = false;
+  }
+
+  if(hide13 === false){
+    btn_home3.visible = true;
+  } else{
+    btn_home3.visible = false;
+  }
+
+  if(hide14 === false){
+    btn_home4.visible = true;
+  } else{
+    btn_home4.visible = false;
+  }
+
+  if(hide15 === false){
+    btn_home5.visible = true;
+  } else{
+    btn_home5.visible = false;
+  }
+
+  if(hide16 === false){
+    btn_home6.visible = true;
+  } else{
+    btn_home6.visible = false;
+  }
+
+  if(hide17 === false){
+    btn_home8.visible = true;
+  } else{
+    btn_home8.visible = false;
+  }
+
+  if(hide18 === false){
+    btn_home9.visible = true;
+  } else{
+    btn_home9.visible = false;
+  }
 
   if(hide8 === true){
     mood1.hide();
@@ -361,7 +417,41 @@ if(hide7 === true){
   dislike.visible = true;
 }
 
+if (mousePressedOver(btn_home1)) {
+  console.log("btn_home1 pressed");
+  form.func1();
+}
+if (mousePressedOver(btn_home2)) {
+  console.log("btn_home2 pressed");
+  form.func2();
+}
+if (mousePressedOver(btn_home3)) {
+  console.log("btn_home3 pressed");
+  form.func3();
+}
+if (mousePressedOver(btn_home4)) {
+  console.log("btn_home4 pressed");
+  form.func4();
+}
+if (mousePressedOver(btn_home5)) {
+  console.log("btn_home5 pressed");
+  form.func5();
+}
+if (mousePressedOver(btn_home6)) {
+  console.log("btn_home6 pressed");
+  form.func6();
+}
+if (mousePressedOver(btn_home8)) {
+  console.log("btn_home8 pressed");
+  form.func8();
+}
+if (mousePressedOver(btn_home9)) {
+  console.log("btn_home9 pressed");
+  form.func9();
+}
+
   if(mousePressedOver(like)){
+    console.log("btn_like pressed");
     like.addImage(likeclicked);
     if(clicked = "dislike"){
       dislike.addImage(dislikeunclicked);
@@ -370,6 +460,7 @@ if(hide7 === true){
   }
 
   if(mousePressedOver(dislike)){
+    console.log("btn_dislike pressed");
     dislike.addImage(dislikeclicked);
     if(clicked = "like"){
       like.addImage(likeunclicked);
@@ -394,6 +485,7 @@ if(hide6 === true){
   game.unactivateReport();
 
   if(mousePressedOver(report)){
+    console.log("btn_report pressed");
     game.activateReport();
       swal(
         {
@@ -526,6 +618,7 @@ close.visible = true;
   }
 
   if (mousePressedOver(close)) {
+    console.log("btn_close pressed");
       a1.visible = false;
   a2.visible = false;
   a3.visible = false;

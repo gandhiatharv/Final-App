@@ -19,10 +19,10 @@ class Form {
     this.input_lastname = createInput("").attribute("placeholder", "Last Name");
     this.input_email = createInput("").attribute("placeholder", "Username");
     this.input_password = createInput("").attribute("placeholder", "Password");
-    this.btn_home2 = createButton("Home");
-    this.btn_home4 = createButton("Home");
-    this.btn_home8 = createButton("Home");
-    this.btn_home6 = createButton("Home");
+    //this.btn_home2 = createButton("Home");
+    //this.btn_home4 = createButton("Home");
+    //this.btn_home8 = createButton("Home");
+    //this.btn_home6 = createButton("Home");
     this.logintitle = createElement('h2');
     this.aboutustitle = createElement('h2');
     this.environmenttitle = createElement('h2');
@@ -36,7 +36,7 @@ class Form {
     this.youmayliketitle = createElement('h2');
     this.similartothistitle = createElement('h2');
     this.madebycreator = createElement('h2');
-    this.btn_home1 = createButton('Home');
+    //this.btn_home1 = createButton('Home');
     this.input_environment = createElement("textarea");
     this.socialmediatitle = createElement('h2');
     this.environmentaldescription = createElement('h2');
@@ -46,15 +46,15 @@ class Form {
     this.input_contactemail = createInput("").attribute("placeholder", "Email");
     this.input_contactphone = createInput("").attribute("placeholder", "Phone Number");
     this.btn_send = createButton("Send");
-    this.btn_home5 = createButton("Home");
+    //this.btn_home5 = createButton("Home");
     this.btn_submitfeedback = createButton('Submit Feedback');
     this.btn_submitexperiences = createButton('Submit Experiences');
     this.btn_submitenvironment = createButton('Submit');
     this.input_feedback = createElement("textarea");
     this.input_experiences = createElement("textarea");
     this.experiencetitle = createElement('h2');
-    this.btn_home3 = createButton("Home");
-    this.btn_home9 = createButton("Home");
+    //this.btn_home3 = createButton("Home");
+    //this.btn_home9 = createButton("Home");
     this.btn_provideeducation = createButton("Provide Education");
     this.btn_seekeducation = createButton("Seek Education");
     this.provideeducationtitle = createElement('h2');
@@ -72,7 +72,7 @@ class Form {
     this.btn_socialmedia.show();
     this.title.show();
     this.btn_go.hide();
-    this.btn_home2.hide();
+    hide12= true;
     this.input_firstname.hide();
     this.logintitle.hide();
     this.input_lastname.hide();
@@ -85,13 +85,13 @@ this.input_feedback.hide();
 this.ratetitle.hide();
 this.btn_submitfeedback.hide();
 this.feedbackdescription.hide();
-this.btn_home4.hide();
+hide14 = true;
 hide7 = true;
   }
   hidefunc3(){
     this.input_experiences.hide();
     this.experiencedescription.hide();
-    this.btn_home3.hide();
+    hide13= true;
     this.experiencetitle.hide();
     this.feelingdescription.hide();
     this.btn_submitexperiences.hide();
@@ -103,7 +103,7 @@ hide7 = true;
         this.environmentaldescription.hide();
         this.environmentalissuedescription1.hide();
         this.environmentalissuedescription2.hide();
-        this.btn_home9.hide();
+        hide18= true;
         this.btn_submitenvironment.hide();
         hide9 = true;
           }
@@ -117,6 +117,89 @@ hide7 = true;
     this.btn_socialmedia.hide();
     this.title.hide();
   }
+  func8(){
+    this.btn_intro.show();
+this.btn_education.show();
+this.btn_environment.show();
+this.btn_otherapps.show();
+this.btn_rate.show();
+this.btn_socialmedia.show();
+this.title.show();
+hide17= true;
+this.aboutustitle.hide();
+hide17 = true;
+hide = false;  
+hide1 = true;
+hide2 = true;
+hide3 = true;
+  }
+  func5(){
+    hide6 = true;
+this.socialmediatitle.hide();
+this.input_chat.hide();
+this.btn_send.hide();
+this.btn_intro.show();
+this.btn_education.show();
+this.btn_environment.show();
+this.btn_otherapps.show();
+this.btn_rate.show();
+this.btn_socialmedia.show();
+this.title.show();
+hide15= true;
+hide15 = true;
+hide = false;  
+  }
+  func4(){
+    form.show();
+    form.hidefunc2();
+    hide14 = true;
+   }
+          func3(){
+            form.show();
+      form.hidefunc3();
+      hide13 = true;
+          }
+        func9(){
+          form.show();
+          form.hidefunc4();
+          hide18 = true;
+        }
+        func6(){
+          form.show();
+          this.btn_resetprogress.hide();
+          this.settingstitle.hide();
+          hide16= true;
+          hide16 = true;
+          hide4 = true;
+        }
+        func2(){
+          this.btn_intro.show();
+          this.btn_education.show();
+          this.btn_environment.show();
+          this.btn_otherapps.show();
+          this.btn_rate.show();
+          this.btn_socialmedia.show();
+          this.title.show();
+          this.btn_go.hide();
+          hide12= true;
+          this.input_firstname.hide();
+          this.logintitle.hide();
+          this.input_lastname.hide();
+          this.input_email.hide();
+          this.input_password.hide();
+          hide12 = true;
+          hide = false;  
+        }
+
+              func1(){
+                form.show();
+          hide11 = true;
+          this.youmayliketitle.hide();
+          this.similartothistitle.hide();
+          this.madebycreator.hide();
+          hide5 = true;
+              }
+
   show() {
     hide = false;
     this.btn_intro.show();
@@ -133,13 +216,13 @@ hide7 = true;
 this.ratetitle.hide();
 this.btn_submitfeedback.hide();
 this.feedbackdescription.hide();
-this.btn_home4.hide();
+hide14 = true;
 hide7 = true;
 
 
 this.input_experiences.hide();
 this.experiencedescription.hide();
-this.btn_home3.hide();
+hide13= true;
 this.experiencetitle.hide();
 this.feelingdescription.hide();
 this.btn_submitexperiences.hide();
@@ -150,7 +233,7 @@ this.environmenttitle.hide();
 this.environmentaldescription.hide();
 this.environmentalissuedescription1.hide();
 this.environmentalissuedescription2.hide();
-this.btn_home9.hide();
+hide18= true;
 this.btn_submitenvironment.hide();
 hide9 = true;
 
@@ -192,11 +275,11 @@ btn_otherapps.style('font-size', '10px');*/
     this.btn_seekeducation.style('height', '90px');
 
     this.environmenttitle.html("Spread Environmental Awareness");
-    this.environmenttitle.position(132, 155);
+    this.environmenttitle.position(151, 155);
     this.environmenttitle.style('font-size', '18px');
 
     this.feelingdescription.html("How are you feeling today?");
-    this.feelingdescription.position(180, 215);
+    this.feelingdescription.position(190, 215);
     this.feelingdescription.style('font-size', '15px');
     this.feelingdescription.style('color', 'black');
 
@@ -213,7 +296,7 @@ btn_otherapps.style('font-size', '10px');*/
     this.utilizeeducationdescription.style('color', 'black');
 
     this.environmentaldescription.html("Describe issue's environmental impact");
-    this.environmentaldescription.position(136, 460);
+    this.environmentaldescription.position(156, 460);
     this.environmentaldescription.style('font-size', '15px');
     this.environmentaldescription.style('color', 'black');
 
@@ -228,17 +311,17 @@ btn_otherapps.style('font-size', '10px');*/
     this.experiencedescription.style('color', 'black');
 
     this.environmentalissuedescription1.html("Select an environmental issue");
-    this.environmentalissuedescription1.position(165, 197);
+    this.environmentalissuedescription1.position(182, 197);
     this.environmentalissuedescription1.style('font-size', '15px');
     this.environmentalissuedescription1.style('color', 'black');
 
     this.environmentalissuedescription2.html("to bring awareness to.");
-    this.environmentalissuedescription2.position(190, 217);
+    this.environmentalissuedescription2.position(205, 217);
     this.environmentalissuedescription2.style('font-size', '15px');
     this.environmentalissuedescription2.style('color', 'black');
 
     this.experiencetitle.html("Social Media Experiences");
-    this.experiencetitle.position(150, 170);
+    this.experiencetitle.position(165, 170);
     this.experiencetitle.style('font-size', '21px');
 
     this.input_chat.position(135, 570);
@@ -260,7 +343,7 @@ btn_otherapps.style('font-size', '10px');*/
     this.input_experiences.style('height', '60px')
 
     this.youmayliketitle.html("You May Also Like");
-    this.youmayliketitle.position(145, 155);
+    this.youmayliketitle.position(162.5, 155);
     this.youmayliketitle.style('font-size', '30px');
 
     this.socialmediatitle.html("Social Media");
@@ -287,7 +370,7 @@ btn_otherapps.style('font-size', '10px');*/
     this.ratetitle.position(192, 155);
     this.ratetitle.style('font-size', '30px');
 
-    this.btn_home1.hide();
+    hide11= true;
     this.youmayliketitle.hide();
     this.similartothistitle.hide();
     this.madebycreator.hide();
@@ -296,7 +379,7 @@ btn_otherapps.style('font-size', '10px');*/
     hide2 = true;
     hide3 = true;
     this.aboutustitle.hide();
-    this.btn_home8.hide();
+    hide17= true;
 
     this.input_firstname.position(180, 220);
     this.input_firstname.style('width', '100px');
@@ -324,7 +407,7 @@ btn_otherapps.style('font-size', '10px');*/
     this.btn_submitexperiences.style('height', '50px');
 
     this.btn_go.hide();
-    this.btn_home2.hide();
+    hide12= true;
     this.input_firstname.hide();
     this.logintitle.hide();
     this.input_lastname.hide();
@@ -352,7 +435,7 @@ btn_otherapps.style('font-size', '10px');*/
     this.btn_login.style('height', '30px');
     this.btn_login.style('font-size', '10px');
 
-    this.btn_home2.position(375, 615);
+    /*this.btn_home2.position(375, 615);
     this.btn_home2.style('border-radius', '25%');
     this.btn_home2.style('border', '2px dashed black')
     this.btn_home2.style('width', '50px');
@@ -414,7 +497,7 @@ btn_otherapps.style('font-size', '10px');*/
     this.btn_home5.style('width', '50px');
     this.btn_home5.style('height', '45px');
     this.btn_home5.style('font-size', '8px');
-    this.btn_home5.style('background-color', '#FFD580');
+    this.btn_home5.style('background-color', '#FFD580');*/
 
     this.btn_resetprogress.position(292, 585);
     this.btn_resetprogress.style('width', '150px');
@@ -473,7 +556,7 @@ btn_otherapps.style('font-size', '10px');*/
 
     this.btn_resetprogress.hide();
     this.settingstitle.hide();
-    this.btn_home6.hide();
+    hide16= true;
 
     this.btn_aboutus.position(237, 130);
     this.btn_aboutus.style('background-color', 'lightgray');
@@ -483,34 +566,8 @@ btn_otherapps.style('font-size', '10px');*/
     this.btn_aboutus.style('height', '30px');
     this.btn_aboutus.style('font-size', '10px');
 
-    this.btn_home2.mousePressed(()=>{
-      this.btn_intro.show();
-      this.btn_education.show();
-      this.btn_environment.show();
-      this.btn_otherapps.show();
-      this.btn_rate.show();
-      this.btn_socialmedia.show();
-      this.title.show();
-      this.btn_go.hide();
-      this.btn_home2.hide();
-      this.input_firstname.hide();
-      this.logintitle.hide();
-      this.input_lastname.hide();
-      this.input_email.hide();
-      this.input_password.hide();
-      hide = false;  
-          });
-
-          this.btn_home1.mousePressed(()=>{
-            form.show();
-            this.btn_home1.hide();
-            this.youmayliketitle.hide();
-            this.similartothistitle.hide();
-            this.madebycreator.hide();
-            hide5 = true;
-                });
-
                 this.btn_provideeducation.mousePressed(()=>{
+                  console.log("btn_provideeducation pressed");
                   this.btn_provideeducation.hide();
                   this.provideeducationtitle.show();
                   this.provideeducationdescription.show();
@@ -519,7 +576,8 @@ btn_otherapps.style('font-size', '10px');*/
                   this.educationtitle.hide();
                       });
 
-                     /*this.btn_seekeducation.mousePressed(()=>{
+                     this.btn_seekeducation.mousePressed(()=>{
+                                         console.log("btn_seekeducation pressed");
                         if(loggedin === true){
                         this.btn_provideeducation.hide();
                         this.btn_seekeducation.hide();
@@ -535,7 +593,7 @@ btn_otherapps.style('font-size', '10px');*/
                           }
                             )
                         }
-                            });*/
+                            });
                             this.input_contactemail.hide();
                             this.input_contactphone.hide();
                             this.btn_provideeducation.hide();
@@ -546,30 +604,33 @@ btn_otherapps.style('font-size', '10px');*/
                             this.educationtitle.hide();
 
                 this.btn_environment.mousePressed(()=>{
+                  console.log("btn_environment pressed");
                   form.enter();
                 this.input_environment.show();
 this.environmenttitle.show();
 this.environmentaldescription.show();
 this.environmentalissuedescription1.show();
 this.environmentalissuedescription2.show();
-this.btn_home9.show();
+hide18= false;
 this.btn_submitenvironment.show();
 hide9 = false;
 });
 
                 this.btn_intro.mousePressed(()=>{
+                  console.log("btn_intro pressed");
                   form.enter();
                 this.input_experiences.show();
                 this.experiencedescription.show();
-this.btn_home3.show();
+hide13 = false;
 this.experiencetitle.show();
 this.feelingdescription.show();
 this.btn_submitexperiences.show();
 hide8 = false;
 });
                 this.btn_otherapps.mousePressed(()=>{
+                  console.log("btn_otherapps pressed");
                   form.enter();
-                  this.btn_home1.show();
+                  hide11 = false;
                   this.youmayliketitle.show();
                   this.similartothistitle.show();
                   this.madebycreator.show();
@@ -577,6 +638,7 @@ hide8 = false;
                       });
 
                       this.btn_send.mousePressed(()=>{
+                        console.log("btn_send pressed");
                         if(this.input_chat.value().length>=1 && this.input_chat.value()!==""){
                           if(CM1!==""&&CM2!==""&&CM3!==""&&CM4!==""&&CM5!==""&&CM6!==""){
                               CM1 = CM2;
@@ -617,14 +679,16 @@ hide8 = false;
                   
 
           this.btn_settings.mousePressed(()=>{
+            console.log("btn_settings pressed");
             form.enter();
             this.btn_resetprogress.show();
             this.settingstitle.show();
-            this.btn_home6.show();
+            hide16= false;
             hide4 = false;
                 });
 
                 this.btn_submitenvironment.mousePressed(()=>{
+                  console.log("btn_submitenvironment pressed");
                   if(this.input_environment.value().length<1 || this.input_environment.value()===""){
                     swal({
                       confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
@@ -663,6 +727,7 @@ hide8 = false;
                       });
 
                 this.btn_submitexperiences.mousePressed(()=>{
+                  console.log("btn_submitexperiences pressed");
                   if(this.input_experiences.value().length<1 || this.input_experiences.value()===""){
                     swal({
                       confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
@@ -700,6 +765,7 @@ hide8 = false;
                       });
 
                 this.btn_submitfeedback.mousePressed(()=>{
+                  console.log("btn_submitfeedback pressed");
                   if(this.input_feedback.value().length<1 || this.input_feedback.value()===""){
                     swal({
                       confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
@@ -736,84 +802,37 @@ hide8 = false;
                   
                   }
                       });
-
-                      this.btn_home4.mousePressed(()=>{
-                        form.show();
-                        form.hidefunc2();
-                            });
-                            this.btn_home3.mousePressed(()=>{
-                              form.show();
-                              form.hidefunc3();
-                                  });
-                                  this.btn_home9.mousePressed(()=>{
-                                  form.show();
-                                  form.hidefunc4();
-                                });
                             this.btn_rate.mousePressed(()=>{
+                              console.log("btn_rate pressed");
                               form.enter();
                               this.input_feedback.show();
                               this.ratetitle.show();
                               this.btn_submitfeedback.show();
                               this.feedbackdescription.show();
-                              this.btn_home4.show();
+                              hide14 = false;
                               hide7 = false;                                  });
 
-         this.btn_home6.mousePressed(()=>{
-            form.show();
-            this.btn_resetprogress.hide();
-            this.settingstitle.hide();
-            this.btn_home6.hide();
-            hide4 = true;
-                });
-
           this.btn_aboutus.mousePressed(()=>{
+            console.log("btn_aboutus pressed");
             form.enter();
             hide1 = false;
             hide2 = false;
             hide3 = false;
             this.aboutustitle.show();
-            this.btn_home8.show();
+            hide17= false;
                 });
 
-          this.btn_home8.mousePressed(()=>{
-            this.btn_intro.show();
-            this.btn_education.show();
-            this.btn_environment.show();
-            this.btn_otherapps.show();
-            this.btn_rate.show();
-            this.btn_socialmedia.show();
-            this.title.show();
-            this.btn_home8.hide();
-            this.aboutustitle.hide();
-            hide = false;  
-            hide1 = true;
-            hide2 = true;
-            hide3 = true;
-                });
+              
 
                 hide6 = true;
                 this.socialmediatitle.hide();
                 this.input_chat.hide();
                 this.btn_send.hide();
-                this.btn_home5.hide();
+                hide15= true;
 
-                this.btn_home5.mousePressed(()=>{
-                  hide6 = true;
-                  this.socialmediatitle.hide();
-                  this.input_chat.hide();
-                  this.btn_send.hide();
-                  this.btn_intro.show();
-                  this.btn_education.show();
-                  this.btn_environment.show();
-                  this.btn_otherapps.show();
-                  this.btn_rate.show();
-                  this.btn_socialmedia.show();
-                  this.title.show();
-                  this.btn_home5.hide();
-                  hide = false;  
-                      });
                 
                       this.btn_socialmedia.mousePressed(()=>{
+                        console.log("btn_socialmedia pressed");
                         hide6 = false;
                         this.socialmediatitle.show();
                         this.input_chat.show();
@@ -825,11 +844,12 @@ hide8 = false;
                         this.btn_rate.hide();
                         this.btn_socialmedia.hide();
                         this.title.hide();
-                        this.btn_home5.show();
+                        hide15= false;
                         hide = true;  
                             });
 
                 this.btn_resetprogress.mousePressed(()=>{
+                  console.log("btn_resetprogress pressed");
                   swal({
                     confirmButtonColor: '#8CD4F5', title: 'Are you sure you would like to reset your progress?',
                     text: "You won't be able to revert this!",
@@ -845,6 +865,7 @@ hide8 = false;
                 })
 
                 this.btn_fakehome.mousePressed(()=>{
+                  console.log("btn_fakehome pressed");
                   swal({
                     confirmButtonColor: '#8CD4F5', title: 'Are you sure you would like to exit this app?',
                     text: "You won't be able to revert this!",
@@ -860,6 +881,7 @@ hide8 = false;
                 })
 
     this.btn_login.mousePressed(()=>{
+      console.log("btn_login pressed");
       scr = true;
 this.btn_intro.hide();
 this.btn_education.hide();
@@ -873,12 +895,12 @@ this.btn_resetprogress.hide();
 hide3 = true;
 hide4 = true;
 this.aboutustitle.hide();
-this.btn_home6.hide();
-this.btn_home8.hide();
+hide16= true;
+hide17= true;
 this.btn_socialmedia.hide();
 this.title.hide();
 this.btn_go.show();
-this.btn_home2.show();
+hide12 = false;
 this.input_firstname.show();
 this.logintitle.show();
 this.input_lastname.show();
@@ -888,6 +910,7 @@ hide = true;
     });
     
     this.btn_aboutus.mousePressed(()=>{
+      console.log("btn_aboutus pressed");
       scr = true;
       this.btn_intro.hide();
       this.btn_education.hide();
@@ -901,12 +924,12 @@ hide = true;
       hide3 = false;
       hide4 = true;
       this.aboutustitle.show();
-      this.btn_home6.hide();
-      this.btn_home8.show();
+      hide16= true;
+      hide17= false;
       this.btn_socialmedia.hide();
       this.title.hide();
       this.btn_go.hide();
-      this.btn_home2.hide();
+      hide12= true;
       this.input_firstname.hide();
       this.logintitle.hide();
       this.input_lastname.hide();
@@ -916,6 +939,7 @@ hide = true;
           });
           
     this.btn_settings.mousePressed(()=>{
+      console.log("btn_settings pressed");
       scr = true;
       this.btn_intro.hide();
       this.btn_education.hide();
@@ -929,12 +953,12 @@ hide = true;
       hide3 = true;
       hide4 = false;
       this.aboutustitle.hide();
-      this.btn_home6.show();
-      this.btn_home8.hide();
+      hide16= false;
+      hide17= true;
       this.btn_socialmedia.hide();
       this.title.hide();
       this.btn_go.hide();
-      this.btn_home2.hide();
+      hide12= true;
       this.input_firstname.hide();
       this.logintitle.hide();
       this.input_lastname.hide();
@@ -944,12 +968,14 @@ hide = true;
           });
 
     this.btn_logout.mousePressed(()=>{
+      console.log("btn_logout pressed");
       this.btn_logout.hide();
       this.btn_login.show();
       name = "Anonymous";
       loggedin = false;
           });
     this.btn_go.mousePressed(()=>{
+      console.log("btn_go pressed");
     
       if(this.input_firstname.value().length<1 || this.input_firstname.value()===""||this.input_lastname.value().length<1 || this.input_lastname.value()===""||this.input_email.value().length<1 || this.input_email.value()===""||this.input_password.value().length<1 || this.input_password.value()===""){
         swal({
