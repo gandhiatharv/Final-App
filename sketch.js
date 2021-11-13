@@ -32,7 +32,7 @@ var hide17 = true;
 var hide18 = true;
 var scr = true;
 var name = "Anonymous";
-var loggedin = true;
+var loggedin = false;
 var CM1, CM2, CM3, CM4, CM5, CM6;
 var reported = false;
 var icon1, icon2, report, reportimg;

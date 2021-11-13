@@ -19,10 +19,6 @@ class Form {
     this.input_lastname = createInput("").attribute("placeholder", "Last Name");
     this.input_email = createInput("").attribute("placeholder", "Username");
     this.input_password = createInput("").attribute("placeholder", "Password");
-    //this.btn_home2 = createButton("Home");
-    //this.btn_home4 = createButton("Home");
-    //this.btn_home8 = createButton("Home");
-    //this.btn_home6 = createButton("Home");
     this.logintitle = createElement('h2');
     this.aboutustitle = createElement('h2');
     this.environmenttitle = createElement('h2');
@@ -36,7 +32,6 @@ class Form {
     this.youmayliketitle = createElement('h2');
     this.similartothistitle = createElement('h2');
     this.madebycreator = createElement('h2');
-    //this.btn_home1 = createButton('Home');
     this.input_environment = createElement("textarea");
     this.socialmediatitle = createElement('h2');
     this.environmentaldescription = createElement('h2');
@@ -46,15 +41,12 @@ class Form {
     this.input_contactemail = createInput("").attribute("placeholder", "Email");
     this.input_contactphone = createInput("").attribute("placeholder", "Phone Number");
     this.btn_send = createButton("Send");
-    //this.btn_home5 = createButton("Home");
     this.btn_submitfeedback = createButton('Submit Feedback');
     this.btn_submitexperiences = createButton('Submit Experiences');
     this.btn_submitenvironment = createButton('Submit');
     this.input_feedback = createElement("textarea");
     this.input_experiences = createElement("textarea");
     this.experiencetitle = createElement('h2');
-    //this.btn_home3 = createButton("Home");
-    //this.btn_home9 = createButton("Home");
     this.btn_provideeducation = createButton("Provide Education");
     this.btn_seekeducation = createButton("Seek Education");
     this.provideeducationtitle = createElement('h2');
@@ -79,6 +71,78 @@ class Form {
     this.input_email.hide();
     this.input_password.hide();
     hide = false;  
+  }
+  hideeverything(){
+    this.title.hide();
+    this.btn_logout.hide();
+    this.btn_intro.hide();
+    this.btn_rate.hide();
+    this.btn_education.hide();
+    this.btn_socialmedia.hide();
+    this.btn_environment.hide();
+    this.btn_otherapps.hide();
+    this.educationtitle.hide();
+    this.btn_go.hide();
+    this.btn_fakehome.hide();
+    this.input_firstname.hide();
+    this.input_lastname.hide();
+    this.input_email.hide();
+    this.input_password.hide();
+    this.logintitle.hide();
+    this.aboutustitle.hide();
+    this.environmenttitle.hide();
+    this.feelingdescription.hide();
+    this.environmentalissuedescription1.hide();
+    this.environmentalissuedescription2.hide();
+    this.lifestyle.hide();
+    this.ratetitle.hide();
+    this.settingstitle.hide();
+    this.btn_resetprogress.hide();
+    this.youmayliketitle.hide();
+    this.similartothistitle.hide();
+    this.madebycreator.hide();
+    this.input_environment.hide();
+    this.socialmediatitle.hide();
+    this.environmentaldescription.hide();
+    this.feedbackdescription.hide();
+    this.experiencedescription.hide();
+    this.input_chat.hide();
+    this.input_contactemail.hide();
+    this.input_contactphone.hide();
+    this.btn_send.hide();
+    this.btn_submitfeedback.hide();
+    this.btn_submitexperiences.hide();
+    this.btn_submitenvironment.hide();
+    this.input_feedback.hide();
+    this.input_experiences.hide();
+    this.experiencetitle.hide();
+    this.btn_provideeducation.hide();
+    this.btn_seekeducation.hide();
+    this.provideeducationtitle.hide();
+    this.seekeducationtitle.hide();
+    this.provideeducationdescription.hide();
+    this.utilizeeducationdescription.hide();
+    this.utilizeeducation.hide();
+    hide = false;
+    hide1 = false;
+    hide2 = false;
+    hide3 = false;
+    hide4 = true;
+    hide5 = true;
+    hide6 = true;
+    selected = false;
+    hide7 = true;
+    hide8 = true;
+    hide9 = true;
+    hide10 = true;
+    hide11 = true;
+    hide12 = true;
+    hide13 = true;
+    hide14 = true;
+    hide15 = true;
+    hide16 = true;
+    hide17 = true;
+    hide18 = true;
   }
   hidefunc2(){
 this.input_feedback.hide();
@@ -237,15 +301,6 @@ hide18= true;
 this.btn_submitenvironment.hide();
 hide9 = true;
 
-/*
-btn_intro.style('font-size', '10px');
-btn_rate.style('font-size', '10px');
-btn_education.style('font-size', '10px');
-btn_socialmedia.style('font-size', '10px');
-btn_environment.style('font-size', '10px');
-btn_otherapps.style('font-size', '10px');*/
-
-
     this.aboutustitle.html("About Us");
     this.aboutustitle.position(222, 155);
     this.aboutustitle.style('font-size', '30px');
@@ -353,14 +408,13 @@ btn_otherapps.style('font-size', '10px');*/
     this.similartothistitle.html("Similar To This");
     this.similartothistitle.position(210, 215);
     this.similartothistitle.style('font-size', '20px');
-    this.similartothistitle.style('color', 'red');
+    this.similartothistitle.style('color', 'black');
 
     this.madebycreator.html("By The Same Creator");
     this.madebycreator.position(190, 485);
     this.madebycreator.style('font-size', '20px');
-    this.madebycreator.style('color', 'red');
+    this.madebycreator.style('color', 'black');
 
-    this.similartothistitle.style('color', 'red');
 
     this.settingstitle.html("Settings");
     this.settingstitle.position(232, 155);
@@ -434,70 +488,6 @@ btn_otherapps.style('font-size', '10px');*/
     this.btn_login.style('width', '100px');
     this.btn_login.style('height', '30px');
     this.btn_login.style('font-size', '10px');
-
-    /*this.btn_home2.position(375, 615);
-    this.btn_home2.style('border-radius', '25%');
-    this.btn_home2.style('border', '2px dashed black')
-    this.btn_home2.style('width', '50px');
-    this.btn_home2.style('height', '50px');
-    this.btn_home2.style('font-size', '7px');
-    this.btn_home2.style('background-color', '#FFD580');
-
-    this.btn_home1.position(375, 615);
-    this.btn_home1.style('border-radius', '25%');
-    this.btn_home1.style('border', '2px dashed black')
-    this.btn_home1.style('width', '50px');
-    this.btn_home1.style('height', '50px');
-    this.btn_home1.style('font-size', '7px');
-    this.btn_home1.style('background-color', '#FFD580');
-
-    this.btn_home6.position(375, 630);
-    this.btn_home6.style('border-radius', '25%');
-    this.btn_home6.style('border', '2px dashed black')
-    this.btn_home6.style('width', '50px');
-    this.btn_home6.style('height', '25px');
-    this.btn_home6.style('font-size', '7px');
-    this.btn_home6.style('background-color', '#FFD580');
-
-    this.btn_home4.position(375, 630);
-    this.btn_home4.style('border-radius', '25%');
-    this.btn_home4.style('border', '2px dashed black')
-    this.btn_home4.style('width', '50px');
-    this.btn_home4.style('height', '25px');
-    this.btn_home4.style('font-size', '7px');
-    this.btn_home4.style('background-color', '#FFD580');
-
-    this.btn_home3.position(375, 630);
-    this.btn_home3.style('border-radius', '25%');
-    this.btn_home3.style('border', '2px dashed black')
-    this.btn_home3.style('width', '50px');
-    this.btn_home3.style('height', '25px');
-    this.btn_home3.style('font-size', '7px');
-    this.btn_home3.style('background-color', '#FFD580');
-
-    this.btn_home9.position(375, 630);
-    this.btn_home9.style('border-radius', '25%');
-    this.btn_home9.style('border', '2px dashed black')
-    this.btn_home9.style('width', '50px');
-    this.btn_home9.style('height', '25px');
-    this.btn_home9.style('font-size', '7px');
-    this.btn_home9.style('background-color', '#FFD580');
-
-    this.btn_home8.position(375, 625);
-    this.btn_home8.style('border-radius', '25%');
-    this.btn_home8.style('border', '2px dashed black')
-    this.btn_home8.style('width', '50px');
-    this.btn_home8.style('height', '40px');
-    this.btn_home8.style('font-size', '7px');
-    this.btn_home8.style('background-color', '#FFD580');
-
-    this.btn_home5.position(370, 620);
-    this.btn_home5.style('border-radius', '25%');
-    this.btn_home5.style('border', '2px dashed black')
-    this.btn_home5.style('width', '50px');
-    this.btn_home5.style('height', '45px');
-    this.btn_home5.style('font-size', '8px');
-    this.btn_home5.style('background-color', '#FFD580');*/
 
     this.btn_resetprogress.position(292, 585);
     this.btn_resetprogress.style('width', '150px');
@@ -676,16 +666,6 @@ hide8 = false;
                   }
                         }
                       });
-                  
-
-          this.btn_settings.mousePressed(()=>{
-            console.log("btn_settings pressed");
-            form.enter();
-            this.btn_resetprogress.show();
-            this.settingstitle.show();
-            hide16= false;
-            hide4 = false;
-                });
 
                 this.btn_submitenvironment.mousePressed(()=>{
                   console.log("btn_submitenvironment pressed");
@@ -812,15 +792,6 @@ hide8 = false;
                               hide14 = false;
                               hide7 = false;                                  });
 
-          this.btn_aboutus.mousePressed(()=>{
-            console.log("btn_aboutus pressed");
-            form.enter();
-            hide1 = false;
-            hide2 = false;
-            hide3 = false;
-            this.aboutustitle.show();
-            hide17= false;
-                });
 
               
 
@@ -881,6 +852,7 @@ hide8 = false;
                 })
 
     this.btn_login.mousePressed(()=>{
+      form.hideeverything();
       console.log("btn_login pressed");
       scr = true;
 this.btn_intro.hide();
@@ -911,6 +883,13 @@ hide = true;
     
     this.btn_aboutus.mousePressed(()=>{
       console.log("btn_aboutus pressed");
+      form.hideeverything();
+      form.enter();
+      hide1 = false;
+      hide2 = false;
+      hide3 = false;
+      this.aboutustitle.show();
+      hide17= false;
       scr = true;
       this.btn_intro.hide();
       this.btn_education.hide();
@@ -940,6 +919,11 @@ hide = true;
           
     this.btn_settings.mousePressed(()=>{
       console.log("btn_settings pressed");
+      form.hideeverything();
+      form.enter();
+      this.btn_resetprogress.show();
+      this.settingstitle.show();
+      hide16= false;
       scr = true;
       this.btn_intro.hide();
       this.btn_education.hide();
