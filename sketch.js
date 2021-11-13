@@ -30,6 +30,7 @@ var hide15 = true;
 var hide16 = true;
 var hide17 = true;
 var hide18 = true;
+var tries2 = 1;
 var scr = true;
 var name = "Anonymous";
 var loggedin = false;
@@ -42,7 +43,7 @@ var like, dislike, likeunclicked, dislikeunclicked, likeclicked, dislikeclicked;
 var aboutmetext, aboutmetextimg;
 let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, qbp, qpa, mood1, environmentalissues, capture, subjects;
 var mood, moodimg, btn_home1, btn_home2, btn_home3, btn_home4, btn_home5, btn_home6, btn_home8, btn_home9, homeimg;
-
+var bgsound, alertsound, clicksound, popupsound, sendsound;
 /*
 MUST DO:
 ONE COLOR SCHEME FOR APP
@@ -93,6 +94,11 @@ function preload(){
   dislikeunclicked = loadImage("images/dislike.png");
   moodimg = loadImage("images/moods.png");
   homeimg = loadImage("images/home.png");
+  bgsound = loadSound("sound/backgroundmusic.mp3");
+  alertsound = loadSound("sound/alert.mp3");
+  clicksound = loadSound("sound/click.mp3");
+  popupsound = loadSound("sound/popup.mp3");
+  sendsound = loadSound("sound/sendmessage.mp3");
 }
 
 function setup(){
@@ -343,6 +349,10 @@ function setup(){
 function draw(){
   /*image(capture, 0, 0, width, width * capture.height / capture.width);
   filter(INVERT);*/
+  clicksound.setVolume(50);
+  alertsound.setVolume(50);
+  popupsound.setVolume(50);
+  sendsound.setVolume(50);
 
   if(hide11 === false){
     btn_home1.visible = true;
@@ -419,38 +429,39 @@ if(hide7 === true){
 
 if (mousePressedOver(btn_home1)) {
   console.log("btn_home1 pressed");
-  form.func1();
+  clicksound.play(); form.func1();
 }
 if (mousePressedOver(btn_home2)) {
   console.log("btn_home2 pressed");
-  form.func2();
+  clicksound.play(); form.func2();
 }
 if (mousePressedOver(btn_home3)) {
   console.log("btn_home3 pressed");
-  form.func3();
+  clicksound.play(); form.func3();
 }
 if (mousePressedOver(btn_home4)) {
   console.log("btn_home4 pressed");
-  form.func4();
+  clicksound.play(); form.func4();
 }
 if (mousePressedOver(btn_home5)) {
   console.log("btn_home5 pressed");
-  form.func5();
+  clicksound.play(); form.func5();
 }
 if (mousePressedOver(btn_home6)) {
   console.log("btn_home6 pressed");
-  form.func6();
+  clicksound.play(); form.func6();
 }
 if (mousePressedOver(btn_home8)) {
   console.log("btn_home8 pressed");
-  form.func8();
+  clicksound.play(); form.func8();
 }
 if (mousePressedOver(btn_home9)) {
   console.log("btn_home9 pressed");
-  form.func9();
+  clicksound.play(); form.func9();
 }
 
   if(mousePressedOver(like)){
+    clicksound.play();
     console.log("btn_like pressed");
     like.addImage(likeclicked);
     if(clicked = "dislike"){
@@ -460,6 +471,7 @@ if (mousePressedOver(btn_home9)) {
   }
 
   if(mousePressedOver(dislike)){
+    clicksound.play();
     console.log("btn_dislike pressed");
     dislike.addImage(dislikeclicked);
     if(clicked = "like"){
@@ -485,9 +497,10 @@ if(hide6 === true){
   game.unactivateReport();
 
   if(mousePressedOver(report)){
+    clicksound.play();
     console.log("btn_report pressed");
     game.activateReport();
-      swal(
+      alertsound.play(); swal(
         {
           confirmButtonColor: '#8CD4F5', title: `Successfully Reported`,
           text: "You have successfully reported inappropriate content.",
@@ -550,8 +563,9 @@ if(hide3 === false){
   icon2.visible = false;
 }
 
-  if(frameCount%600 === 0){
+  if(frameCount%350 === 0){
     rand = Math.round(random(1, 10));
+    popupsound.play();
       a1.visible = false;
   a2.visible = false;
   a3.visible = false;
@@ -618,6 +632,7 @@ close.visible = true;
   }
 
   if (mousePressedOver(close)) {
+    clicksound.play();
     console.log("btn_close pressed");
       a1.visible = false;
   a2.visible = false;

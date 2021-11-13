@@ -7,7 +7,7 @@ class Form {
     this.btn_logout = createButton("Log Out");
     this.btn_intro = createButton("Social Media Experiences");
     this.btn_rate = createButton("Rate This App");
-    this.btn_education = createButton("Provide/Seek Education");
+    //this.btn_education = createButton("Provide/Seek Education");
     this.btn_socialmedia = createButton("Social Media");
     this.btn_environment = createButton("Spread Environmental Awareness");
     this.btn_otherapps = createButton("You May Also Like");
@@ -57,7 +57,7 @@ class Form {
   }
   hide(){
     this.btn_intro.show();
-    this.btn_education.show();
+    //this.btn_education.show();
     this.btn_environment.show();
     this.btn_otherapps.show();
     this.btn_rate.show();
@@ -77,7 +77,7 @@ class Form {
     this.btn_logout.hide();
     this.btn_intro.hide();
     this.btn_rate.hide();
-    this.btn_education.hide();
+    //this.btn_education.hide();
     this.btn_socialmedia.hide();
     this.btn_environment.hide();
     this.btn_otherapps.hide();
@@ -174,7 +174,7 @@ hide7 = true;
   enter() {
     hide = true;
     this.btn_intro.hide();
-    this.btn_education.hide();
+    //this.btn_education.hide();
     this.btn_environment.hide();
     this.btn_otherapps.hide();
     this.btn_rate.hide();
@@ -183,7 +183,7 @@ hide7 = true;
   }
   func8(){
     this.btn_intro.show();
-this.btn_education.show();
+//this.btn_education.show();
 this.btn_environment.show();
 this.btn_otherapps.show();
 this.btn_rate.show();
@@ -203,7 +203,7 @@ this.socialmediatitle.hide();
 this.input_chat.hide();
 this.btn_send.hide();
 this.btn_intro.show();
-this.btn_education.show();
+//this.btn_education.show();
 this.btn_environment.show();
 this.btn_otherapps.show();
 this.btn_rate.show();
@@ -238,7 +238,7 @@ hide = false;
         }
         func2(){
           this.btn_intro.show();
-          this.btn_education.show();
+          //this.btn_education.show();
           this.btn_environment.show();
           this.btn_otherapps.show();
           this.btn_rate.show();
@@ -267,7 +267,7 @@ hide = false;
   show() {
     hide = false;
     this.btn_intro.show();
-    this.btn_education.show();
+    //this.btn_education.show();
     this.btn_environment.show();
     this.btn_otherapps.show();
     this.btn_rate.show();
@@ -507,12 +507,13 @@ hide9 = true;
     this.btn_intro.style('width', '130px');
     this.btn_intro.style('font-size', '10px');
     
-    this.btn_education.position(152, 545);
+   /* this.btn_education.position(152, 545);
     this.btn_education.style('height', '56px');
     this.btn_education.style('width', '130px');
     this.btn_education.style('font-size', '10px');
-    
-    this.btn_environment.position(152, 605);
+    */
+
+    this.btn_environment.position(152, 545);
     this.btn_environment.style('height', '56px');
     this.btn_environment.style('width', '130px');
     this.btn_environment.style('font-size', '10px');
@@ -527,7 +528,7 @@ hide9 = true;
     this.btn_socialmedia.style('width', '130px');
     this.btn_socialmedia.style('font-size', '10px');
 
-    this.btn_otherapps.position(293, 605);
+    this.btn_otherapps.position(223, 605);
     this.btn_otherapps.style('height', '56px');
     this.btn_otherapps.style('width', '130px');
     this.btn_otherapps.style('font-size', '10px');
@@ -556,7 +557,7 @@ hide9 = true;
     this.btn_aboutus.style('height', '30px');
     this.btn_aboutus.style('font-size', '10px');
 
-                this.btn_provideeducation.mousePressed(()=>{
+                this.btn_provideeducation.mousePressed(()=>{ clicksound.play();
                   console.log("btn_provideeducation pressed");
                   this.btn_provideeducation.hide();
                   this.provideeducationtitle.show();
@@ -566,7 +567,7 @@ hide9 = true;
                   this.educationtitle.hide();
                       });
 
-                     this.btn_seekeducation.mousePressed(()=>{
+                     this.btn_seekeducation.mousePressed(()=>{ clicksound.play();
                                          console.log("btn_seekeducation pressed");
                         if(loggedin === true){
                         this.btn_provideeducation.hide();
@@ -574,7 +575,7 @@ hide9 = true;
                         this.educationtitle.hide();
                         this.seekeducationtitle.show();
                         } else{
-                          swal({
+                          alertsound.play(); swal({
                             confirmButtonColor: '#8CD4F5', title: `Unsuccessful`,
                             text: 'To seek education, you must be logged in.',
                             type: "error",
@@ -593,7 +594,7 @@ hide9 = true;
                             this.utilizeeducation.hide();
                             this.educationtitle.hide();
 
-                this.btn_environment.mousePressed(()=>{
+                this.btn_environment.mousePressed(()=>{ clicksound.play();
                   console.log("btn_environment pressed");
                   form.enter();
                 this.input_environment.show();
@@ -606,7 +607,7 @@ this.btn_submitenvironment.show();
 hide9 = false;
 });
 
-                this.btn_intro.mousePressed(()=>{
+                this.btn_intro.mousePressed(()=>{ clicksound.play();
                   console.log("btn_intro pressed");
                   form.enter();
                 this.input_experiences.show();
@@ -617,7 +618,7 @@ this.feelingdescription.show();
 this.btn_submitexperiences.show();
 hide8 = false;
 });
-                this.btn_otherapps.mousePressed(()=>{
+                this.btn_otherapps.mousePressed(()=>{ clicksound.play();
                   console.log("btn_otherapps pressed");
                   form.enter();
                   hide11 = false;
@@ -627,8 +628,9 @@ hide8 = false;
                   hide5 = false;
                       });
 
-                      this.btn_send.mousePressed(()=>{
+                      this.btn_send.mousePressed(()=>{ clicksound.play();
                         console.log("btn_send pressed");
+                        sendsound.play();
                         if(this.input_chat.value().length>=1 && this.input_chat.value()!==""){
                           if(CM1!==""&&CM2!==""&&CM3!==""&&CM4!==""&&CM5!==""&&CM6!==""){
                               CM1 = CM2;
@@ -667,10 +669,10 @@ hide8 = false;
                         }
                       });
 
-                this.btn_submitenvironment.mousePressed(()=>{
+                this.btn_submitenvironment.mousePressed(()=>{ clicksound.play();
                   console.log("btn_submitenvironment pressed");
                   if(this.input_environment.value().length<1 || this.input_environment.value()===""){
-                    swal({
+                    alertsound.play(); swal({
                       confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
                       text: 'Failed submitting your environmental awareness message. Please fill out all inputs.',
                       type: "error",
@@ -679,7 +681,7 @@ hide8 = false;
                     }
                       )
                   } else if(this.input_environment.value()<=0||this.input_environment.value()>=0){
-                  swal({
+                  alertsound.play(); swal({
                     confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
                     text: 'Failed submitting your environmental awareness message. Please fill out all inputs with accurate information.',
                     type: "error",
@@ -688,7 +690,7 @@ hide8 = false;
                   }
                     )
                 } else if(this.input_environment.value().length>=1 && this.input_environment.value()!==""){
-                  swal({
+                  alertsound.play(); swal({
                     confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
                     text: 'You have successfully submitted your environmental awareness message.',
                     type: "success",
@@ -706,10 +708,10 @@ hide8 = false;
                   }
                       });
 
-                this.btn_submitexperiences.mousePressed(()=>{
+                this.btn_submitexperiences.mousePressed(()=>{ clicksound.play();
                   console.log("btn_submitexperiences pressed");
                   if(this.input_experiences.value().length<1 || this.input_experiences.value()===""){
-                    swal({
+                    alertsound.play(); swal({
                       confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
                       text: 'Failed submitting your experiences. Please fill out all inputs.',
                       type: "error",
@@ -718,7 +720,7 @@ hide8 = false;
                     }
                       )
                   } else if(this.input_experiences.value()<=0||this.input_experiences.value()>=0){
-                  swal({
+                  alertsound.play(); swal({
                     confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
                     text: 'Failed submitting your experiences. Please fill out all inputs with accurate information.',
                     type: "error",
@@ -727,7 +729,7 @@ hide8 = false;
                   }
                     )
                 }else if(this.input_experiences.value().length>=1 && this.input_experiences.value()!==""){
-                  swal({
+                  alertsound.play(); swal({
                     confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
                     text: 'You have successfully submitted your experiences.',
                     type: "success",
@@ -744,10 +746,10 @@ hide8 = false;
                   }
                       });
 
-                this.btn_submitfeedback.mousePressed(()=>{
+                this.btn_submitfeedback.mousePressed(()=>{ clicksound.play();
                   console.log("btn_submitfeedback pressed");
                   if(this.input_feedback.value().length<1 || this.input_feedback.value()===""){
-                    swal({
+                    alertsound.play(); swal({
                       confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
                       text: 'Failed submitting your review. Please fill out all inputs.',
                       type: "error",
@@ -756,7 +758,7 @@ hide8 = false;
                     }
                       )
                   } else if(this.input_feedback.value()<=0||this.input_feedback.value()>=0){
-                  swal({
+                  alertsound.play(); swal({
                     confirmButtonColor: '#8CD4F5', title: `Unsuccessful Submission`,
                     text: 'Failed submitting your review. Please fill out all inputs with accurate information.',
                     type: "error",
@@ -765,7 +767,7 @@ hide8 = false;
                   }
                     )
                 } else if(this.input_feedback.value().length>=1 && this.input_feedback.value()!==""){
-                  swal({
+                  alertsound.play(); swal({
                     confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
                     text: 'You have successfully submitted your review.',
                     type: "success",
@@ -782,7 +784,7 @@ hide8 = false;
                   
                   }
                       });
-                            this.btn_rate.mousePressed(()=>{
+                            this.btn_rate.mousePressed(()=>{ clicksound.play();
                               console.log("btn_rate pressed");
                               form.enter();
                               this.input_feedback.show();
@@ -802,14 +804,14 @@ hide8 = false;
                 hide15= true;
 
                 
-                      this.btn_socialmedia.mousePressed(()=>{
+                      this.btn_socialmedia.mousePressed(()=>{ clicksound.play();
                         console.log("btn_socialmedia pressed");
                         hide6 = false;
                         this.socialmediatitle.show();
                         this.input_chat.show();
                         this.btn_send.show();
                         this.btn_intro.hide();
-                        this.btn_education.hide();
+                        //this.btn_education.hide();
                         this.btn_environment.hide();
                         this.btn_otherapps.hide();
                         this.btn_rate.hide();
@@ -819,9 +821,9 @@ hide8 = false;
                         hide = true;  
                             });
 
-                this.btn_resetprogress.mousePressed(()=>{
+                this.btn_resetprogress.mousePressed(()=>{ clicksound.play();
                   console.log("btn_resetprogress pressed");
-                  swal({
+                  alertsound.play(); swal({
                     confirmButtonColor: '#8CD4F5', title: 'Are you sure you would like to reset your progress?',
                     text: "You won't be able to revert this!",
                     type: 'warning',
@@ -835,9 +837,9 @@ hide8 = false;
                     })
                 })
 
-                this.btn_fakehome.mousePressed(()=>{
+                this.btn_fakehome.mousePressed(()=>{ clicksound.play();
                   console.log("btn_fakehome pressed");
-                  swal({
+                  alertsound.play(); swal({
                     confirmButtonColor: '#8CD4F5', title: 'Are you sure you would like to exit this app?',
                     text: "You won't be able to revert this!",
                     type: 'warning',
@@ -851,12 +853,12 @@ hide8 = false;
                     })
                 })
 
-    this.btn_login.mousePressed(()=>{
+    this.btn_login.mousePressed(()=>{ clicksound.play();
       form.hideeverything();
       console.log("btn_login pressed");
       scr = true;
 this.btn_intro.hide();
-this.btn_education.hide();
+//this.btn_education.hide();
 this.btn_environment.hide();
 this.btn_otherapps.hide();
 this.btn_rate.hide();
@@ -881,7 +883,7 @@ this.input_password.show();
 hide = true;
     });
     
-    this.btn_aboutus.mousePressed(()=>{
+    this.btn_aboutus.mousePressed(()=>{ clicksound.play();
       console.log("btn_aboutus pressed");
       form.hideeverything();
       form.enter();
@@ -892,7 +894,7 @@ hide = true;
       hide17= false;
       scr = true;
       this.btn_intro.hide();
-      this.btn_education.hide();
+      //this.btn_education.hide();
       this.btn_environment.hide();
       this.btn_otherapps.hide();
       this.btn_rate.hide();
@@ -917,7 +919,7 @@ hide = true;
       hide = true;
           });
           
-    this.btn_settings.mousePressed(()=>{
+    this.btn_settings.mousePressed(()=>{ clicksound.play();
       console.log("btn_settings pressed");
       form.hideeverything();
       form.enter();
@@ -926,7 +928,7 @@ hide = true;
       hide16= false;
       scr = true;
       this.btn_intro.hide();
-      this.btn_education.hide();
+      //this.btn_education.hide();
       this.btn_environment.hide();
       this.btn_otherapps.hide();
       this.btn_rate.hide();
@@ -951,18 +953,18 @@ hide = true;
       hide = true;
           });
 
-    this.btn_logout.mousePressed(()=>{
+    this.btn_logout.mousePressed(()=>{ clicksound.play();
       console.log("btn_logout pressed");
       this.btn_logout.hide();
       this.btn_login.show();
       name = "Anonymous";
       loggedin = false;
           });
-    this.btn_go.mousePressed(()=>{
+    this.btn_go.mousePressed(()=>{ clicksound.play();
       console.log("btn_go pressed");
     
       if(this.input_firstname.value().length<1 || this.input_firstname.value()===""||this.input_lastname.value().length<1 || this.input_lastname.value()===""||this.input_email.value().length<1 || this.input_email.value()===""||this.input_password.value().length<1 || this.input_password.value()===""){
-        swal({
+        alertsound.play(); swal({
           confirmButtonColor: '#8CD4F5', title: `Unsuccessful Login`,
           text: 'Failed logging you in. Please fill out all inputs.',
           type: "error",
@@ -971,7 +973,7 @@ hide = true;
         }
           )
       } else if(this.input_firstname.value()<=0||this.input_firstname.value()>=0||this.input_lastname.value()<=0||this.input_lastname.value()>=0||this.input_email.value()<=0||this.input_email.value()>=0){
-      swal({
+      alertsound.play(); swal({
         confirmButtonColor: '#8CD4F5', title: `Unsuccessful Login`,
         text: 'Failed logging you in. Please fill out all inputs with accurate information.',
         type: "error",
@@ -984,7 +986,7 @@ hide = true;
       this.btn_login.hide();
       name = this.input_firstname.value() + " " + this.input_lastname.value();
       loggedin = true;
-      swal({
+      alertsound.play(); swal({
         confirmButtonColor: '#8CD4F5', title: `Successfully Logged In`,
         text: 'You are successfully logged in.',
         type: "success",

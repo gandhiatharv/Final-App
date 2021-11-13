@@ -43,6 +43,10 @@ player.getReported();
 
 
 
+if(tries2 === 1){
+  bgsound.play();
+  tries2 = 0;
+}
 
 drawSprites();
     }
