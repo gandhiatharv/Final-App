@@ -41,7 +41,7 @@ class Form {
     this.input_contactemail = createInput("").attribute("placeholder", "Email");
     this.input_contactphone = createInput("").attribute("placeholder", "Phone Number");
     this.btn_send = createButton("Send");
-    this.btn_submitfeedback = createButton('Submit Feedback');
+    this.btn_submitfeedback = createButton('Submit Review');
     this.btn_submitexperiences = createButton('Submit Experiences');
     this.btn_submitenvironment = createButton('Submit');
     this.input_feedback = createElement("textarea");
@@ -505,7 +505,7 @@ hide9 = true;
     this.btn_intro.position(152, 485);
     this.btn_intro.style('height', '56px');
     this.btn_intro.style('width', '130px');
-    this.btn_intro.style('font-size', '10px');
+    this.btn_intro.style('font-size', '10.8px');
     
    /* this.btn_education.position(152, 545);
     this.btn_education.style('height', '56px');
@@ -516,7 +516,7 @@ hide9 = true;
     this.btn_environment.position(152, 545);
     this.btn_environment.style('height', '56px');
     this.btn_environment.style('width', '130px');
-    this.btn_environment.style('font-size', '10px');
+    this.btn_environment.style('font-size', '10.8px');
 
     this.input_contactemail.position(180, 228);
     this.lifestyle.position(180, 485);
@@ -526,12 +526,12 @@ hide9 = true;
     this.btn_socialmedia.position(293, 485);
     this.btn_socialmedia.style('height', '56px');
     this.btn_socialmedia.style('width', '130px');
-    this.btn_socialmedia.style('font-size', '10px');
+    this.btn_socialmedia.style('font-size', '10.8px');
 
     this.btn_otherapps.position(223, 605);
     this.btn_otherapps.style('height', '56px');
     this.btn_otherapps.style('width', '130px');
-    this.btn_otherapps.style('font-size', '10px');
+    this.btn_otherapps.style('font-size', '10.8px');
 
     this.btn_fakehome.position(255, 715);
         this.btn_fakehome.style('background-color', '#A088DB');
@@ -543,7 +543,7 @@ hide9 = true;
     this.btn_rate.position(293, 545);
     this.btn_rate.style('height', '56px');
     this.btn_rate.style('width', '130px');
-    this.btn_rate.style('font-size', '10px');
+    this.btn_rate.style('font-size', '10.8px');
 
     this.btn_resetprogress.hide();
     this.settingstitle.hide();
@@ -575,7 +575,8 @@ hide9 = true;
                         this.educationtitle.hide();
                         this.seekeducationtitle.show();
                         } else{
-                          alertsound.play(); swal({
+                          alertsound.play();
+                       swal({
                             confirmButtonColor: '#8CD4F5', title: `Unsuccessful`,
                             text: 'To seek education, you must be logged in.',
                             type: "error",
@@ -628,10 +629,10 @@ hide8 = false;
                   hide5 = false;
                       });
 
-                      this.btn_send.mousePressed(()=>{ clicksound.play();
+                      this.btn_send.mousePressed(()=>{ //clicksound.play();
                         console.log("btn_send pressed");
-                        sendsound.play();
                         if(this.input_chat.value().length>=1 && this.input_chat.value()!==""){
+                          sendsound.play();
                           if(CM1!==""&&CM2!==""&&CM3!==""&&CM4!==""&&CM5!==""&&CM6!==""){
                               CM1 = CM2;
                               CM2 = CM3;
@@ -690,8 +691,10 @@ hide8 = false;
                   }
                     )
                 } else if(this.input_environment.value().length>=1 && this.input_environment.value()!==""){
-                  alertsound.play(); swal({
-                    confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
+                  alertsound.play(); 
+                  swalison = true;
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Successful Submission`,
                     text: 'You have successfully submitted your environmental awareness message.',
                     type: "success",
                     showConfirmButton: true,
@@ -701,6 +704,7 @@ hide8 = false;
                     if (isConfirm) {
                       form.show();
                       form.hidefunc4();
+                      swalison = false;
                     }
                   }
                     )
@@ -729,8 +733,10 @@ hide8 = false;
                   }
                     )
                 }else if(this.input_experiences.value().length>=1 && this.input_experiences.value()!==""){
-                  alertsound.play(); swal({
-                    confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
+                  alertsound.play(); 
+                  swalison = true;
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Successful Submission`,
                     text: 'You have successfully submitted your experiences.',
                     type: "success",
                     showConfirmButton: true,
@@ -739,7 +745,8 @@ hide8 = false;
                   function(isConfirm) {
                     if (isConfirm) {
                       form.show();
-                      form.hidefunc3();                    }
+                      form.hidefunc3();     
+                    swalison = false;               }
                   }
                     )
                   
@@ -767,8 +774,10 @@ hide8 = false;
                   }
                     )
                 } else if(this.input_feedback.value().length>=1 && this.input_feedback.value()!==""){
-                  alertsound.play(); swal({
-                    confirmButtonColor: '#8CD4F5', title: `Successfull Submission`,
+                  alertsound.play(); 
+                  swalison = true;
+                  swal({
+                    confirmButtonColor: '#8CD4F5', title: `Successful Submission`,
                     text: 'You have successfully submitted your review.',
                     type: "success",
                     showConfirmButton: true,
@@ -778,6 +787,7 @@ hide8 = false;
                     if (isConfirm) {
             form.show();
             form.hidefunc2();
+            swalison = false;
                     }
                   }
                     )
@@ -823,7 +833,9 @@ hide8 = false;
 
                 this.btn_resetprogress.mousePressed(()=>{ clicksound.play();
                   console.log("btn_resetprogress pressed");
-                  alertsound.play(); swal({
+                  alertsound.play(); 
+                  swalison = true;
+                  swal({
                     confirmButtonColor: '#8CD4F5', title: 'Are you sure you would like to reset your progress?',
                     text: "You won't be able to revert this!",
                     type: 'warning',
@@ -832,6 +844,7 @@ hide8 = false;
                     cancelButtonColor: '#d33333',
                     confirmButtonText: "Yes"},    function(isConfirm) {
                         if (isConfirm) {
+                          swalison = false;
                         location.reload();
                       }
                     })
@@ -839,7 +852,9 @@ hide8 = false;
 
                 this.btn_fakehome.mousePressed(()=>{ clicksound.play();
                   console.log("btn_fakehome pressed");
-                  alertsound.play(); swal({
+                  alertsound.play(); 
+                  swalison = true;
+                  swal({
                     confirmButtonColor: '#8CD4F5', title: 'Are you sure you would like to exit this app?',
                     text: "You won't be able to revert this!",
                     type: 'warning',
@@ -849,6 +864,7 @@ hide8 = false;
                     confirmButtonText: "Yes"},    function(isConfirm) {
                         if (isConfirm) {
                         location.reload();
+                        swalison = false;
                       }
                     })
                 })
@@ -986,7 +1002,9 @@ hide = true;
       this.btn_login.hide();
       name = this.input_firstname.value() + " " + this.input_lastname.value();
       loggedin = true;
-      alertsound.play(); swal({
+      alertsound.play(); 
+      swalison = true;
+      swal({
         confirmButtonColor: '#8CD4F5', title: `Successfully Logged In`,
         text: 'You are successfully logged in.',
         type: "success",
@@ -996,6 +1014,7 @@ hide = true;
       function(isConfirm) {
         if (isConfirm) {
 form.hide();
+swalison = false;
         }
       }
         )
