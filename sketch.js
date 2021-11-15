@@ -6,7 +6,7 @@ var allPlayers;
 var database;
 var form, player, game;
 var iphone, iphoneImg, icon, iconImg;
-var a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, btn_close;
+var a1, a2, a3, a4, a5, a6, a7, a8, a9, a10, close;
 var aimg1, aimg2, aimg3, aimg4, aimg5, aimg6, aimg7, aimg8, aimg9, aimg10, closeimg;
 var rand;
 var allowance = "yes";
@@ -30,24 +30,20 @@ var hide15 = true;
 var hide16 = true;
 var hide17 = true;
 var hide18 = true;
-var swalison = false;
-var activated = true;
-var value1 = 50;
-var value2 = 1;
 var tries2 = 1;
 var scr = true;
 var name = "Anonymous";
 var loggedin = false;
 var CM1, CM2, CM3, CM4, CM5, CM6;
 var reported = false;
-var icon1, icon2, btn_report, reportimg;
+var icon1, icon2, report, reportimg;
 var tries = 1;
 var clicked = "nothing";
-var btn_like, btn_dislike, likeunclicked, dislikeunclicked, likeclicked, dislikeclicked;
+var like, dislike, likeunclicked, dislikeunclicked, likeclicked, dislikeclicked;
 var aboutmetext, aboutmetextimg;
 let brightness, volume, language, style, mode, earthhero, covid19bot, humanly, weatherapp, qbp, qpa, mood1, environmentalissues, capture, subjects;
 var mood, moodimg, btn_home1, btn_home2, btn_home3, btn_home4, btn_home5, btn_home6, btn_home8, btn_home9, homeimg;
-var bgsound, alertsound, clicksound, popupsound, sendsound, clicksound2;
+var bgsound, alertsound, clicksound, popupsound, sendsound;
 /*
 MUST DO:
 ONE COLOR SCHEME FOR APP
@@ -61,8 +57,6 @@ make all titles and home buttons the same font size and size and position
 console log when buttons are clicked
 ALIGN ELEMENTS NICELY & MAKE ALL BUTTONS SAME WIDTH & HEIGHT
 MAKE BUTTON FONT SIZES BIGGER
-GIVE NOTIFICATIONS TO LOGIN A COUPLE TIMES WHEN YOU GO ON SPECIFIC SCREENS IF YOU ARE NOT LOGGED IN
-//figure out what happened to missing text
 */
 
 /*
@@ -105,7 +99,6 @@ function preload(){
   clicksound = loadSound("sound/click.mp3");
   popupsound = loadSound("sound/popup.mp3");
   sendsound = loadSound("sound/sendmessage.mp3");
-  clicksound2 = loadSound("sound/buttonpressed.mp3");
 }
 
 function setup(){
@@ -116,9 +109,9 @@ function setup(){
   iphone = createSprite(288, 430);
   iphone.addImage(iphoneImg);
   iphone.scale = 1.6;
-  btn_report = createSprite(142, 655);
-  btn_report.addImage(reportimg);
-  btn_report.scale = 0.5;
+  report = createSprite(142, 655);
+  report.addImage(reportimg);
+  report.scale = 0.5;
   icon = createSprite(288, 355);
   icon.addImage(iconImg);
   icon.scale = 0.45;
@@ -179,17 +172,17 @@ function setup(){
   a10.scale = 0.045;
   a10.visible = false;
   a10.depth = 2;
-  btn_close = createSprite(425, 280, 200, 200);
-  btn_close.addImage(closeimg);
-  btn_close.scale = 0.15;
-  btn_close.visible = false;
-  btn_close.depth = 10;
+  close = createSprite(425, 280, 200, 200);
+  close.addImage(closeimg);
+  close.scale = 0.15;
+  close.visible = false;
+  close.depth = 10;
   aboutmetext = createSprite(289, 532, 200, 200);
   aboutmetext.addImage(aboutmetextimg);
   aboutmetext.scale = 0.3;
   aboutmetext.depth = 10;
   brightness = createSlider(0, 10, 5, 1);
-  brightness.position(245, 230);
+  brightness.position(265, 230);
   brightness.style('width', '110px');
   volume = createSlider(0, 100, 50, 1);
   volume.position(245, 430);
@@ -246,6 +239,7 @@ function setup(){
   style.option('Modern');
   style.option('Fancy');
   style.option('Formal');
+  style.option('Decorative');
   style.option('Playful');
   style.selected('Basic');
 
@@ -294,13 +288,13 @@ function setup(){
   covid19bot = createA('https://bot.dialogflow.com/6599c99c-a4b1-4563-bce0-555ea9fcb8c4', '4. COVID-19 Chatbot');
   covid19bot.position(210, 630);
 
-  btn_like = createSprite(260, 245);
-  btn_like.addImage(likeunclicked);
-  btn_like.scale = 0.1;
+  like = createSprite(260, 245);
+  like.addImage(likeunclicked);
+  like.scale = 0.1;
 
-  btn_dislike = createSprite(310, 245);
-  btn_dislike.addImage(dislikeunclicked);
-  btn_dislike.scale = 0.1;
+  dislike = createSprite(310, 245);
+  dislike.addImage(dislikeunclicked);
+  dislike.scale = 0.1;
 
   mood = createSprite(290, 450);
   mood.addImage(moodimg);
@@ -355,13 +349,10 @@ function setup(){
 function draw(){
   /*image(capture, 0, 0, width, width * capture.height / capture.width);
   filter(INVERT);*/
-
-  clicksound.setVolume(value1);
-  alertsound.setVolume(value1);
-  popupsound.setVolume(value1);
-  sendsound.setVolume(value1);
-  clicksound2.setVolume(value1);
-  bgsound.setVolume(value2);
+  clicksound.setVolume(50);
+  alertsound.setVolume(50);
+  popupsound.setVolume(50);
+  sendsound.setVolume(50);
 
   if(hide11 === false){
     btn_home1.visible = true;
@@ -429,70 +420,65 @@ function draw(){
     selected = true;
   }
 if(hide7 === true){
-  btn_like.visible = false;
-  btn_dislike.visible = false;
+  like.visible = false;
+  dislike.visible = false;
 } else{
-  btn_like.visible = true;
-  btn_dislike.visible = true;
+  like.visible = true;
+  dislike.visible = true;
 }
 
-if (mousePressedOver(btn_home1)) {    if(btn_home1.visible === true && swalison === false){
+if (mousePressedOver(btn_home1)) {
   console.log("btn_home1 pressed");
   clicksound.play(); form.func1();
-}}
-if (mousePressedOver(btn_home2)) {    if(btn_home2.visible === true && swalison === false){
+}
+if (mousePressedOver(btn_home2)) {
   console.log("btn_home2 pressed");
   clicksound.play(); form.func2();
-}}
-if (mousePressedOver(btn_home3)) {    if(btn_home3.visible === true && swalison === false){
+}
+if (mousePressedOver(btn_home3)) {
   console.log("btn_home3 pressed");
   clicksound.play(); form.func3();
-}}
-if (mousePressedOver(btn_home4)) {    if(btn_home4.visible === true && swalison === false){
+}
+if (mousePressedOver(btn_home4)) {
   console.log("btn_home4 pressed");
   clicksound.play(); form.func4();
-}}
-if (mousePressedOver(btn_home5)) {    if(btn_home5.visible === true && swalison === false){
+}
+if (mousePressedOver(btn_home5)) {
   console.log("btn_home5 pressed");
   clicksound.play(); form.func5();
-}}
-if (mousePressedOver(btn_home6)) {    if(btn_home6.visible === true && swalison === false){
+}
+if (mousePressedOver(btn_home6)) {
   console.log("btn_home6 pressed");
   clicksound.play(); form.func6();
-}}
-if (mousePressedOver(btn_home8)) {    if(btn_home8.visible === true && swalison === false){
+}
+if (mousePressedOver(btn_home8)) {
   console.log("btn_home8 pressed");
   clicksound.play(); form.func8();
-}}
-if (mousePressedOver(btn_home9)) {    if(btn_home9.visible === true && swalison === false){
+}
+if (mousePressedOver(btn_home9)) {
   console.log("btn_home9 pressed");
   clicksound.play(); form.func9();
-}}
+}
 
-  if(mousePressedOver(btn_like)){
-    if(btn_like.visible === true && swalison === false){
-      if(clicked !== "like"){
-    clicksound2.play();
-      }
+  if(mousePressedOver(like)){
+    clicksound.play();
     console.log("btn_like pressed");
-    btn_like.addImage(likeclicked);
+    like.addImage(likeclicked);
     if(clicked = "dislike"){
-      btn_dislike.addImage(dislikeunclicked);
+      dislike.addImage(dislikeunclicked);
     }
     clicked = "like";
-  }}
+  }
 
-  if(mousePressedOver(btn_dislike)){
-    if(btn_dislike.visible === true && swalison === false){
-      if(clicked !== "dislike"){
-        clicksound2.play();
-          }    console.log("btn_dislike pressed");
-    btn_dislike.addImage(dislikeclicked);
+  if(mousePressedOver(dislike)){
+    clicksound.play();
+    console.log("btn_dislike pressed");
+    dislike.addImage(dislikeclicked);
     if(clicked = "like"){
-      btn_like.addImage(likeunclicked);
+      like.addImage(likeunclicked);
     }
     clicked = "dislike";
-  }}
+  }
 
 if(tries === 0){
   if(frameCount%100 === 0){
@@ -502,41 +488,27 @@ if(tries === 0){
 }
 
 if(hide6 === true){
-  btn_report.visible = false;
+  report.visible = false;
 } else{
-  btn_report.visible = true;
+  report.visible = true;
 }
 
   game.play();
   game.unactivateReport();
 
-  if(mousePressedOver(btn_report)){
-    if(btn_report.visible === true && swalison === false){
-      if(activated === true){
+  if(mousePressedOver(report)){
     clicksound.play();
-    alertsound.play(); 
-      }
-      activated = false;
     console.log("btn_report pressed");
     game.activateReport();
-    swalison = true;
-      swal(
+      alertsound.play(); swal(
         {
           confirmButtonColor: '#8CD4F5', title: `Successfully Reported`,
           text: "You have successfully reported inappropriate content.",
           type:'success',
           confirmButtonText: "Ok"
-        },
-        function(isConfirm) {
-          if (isConfirm) {
-            activated = true;
-            swalison = false;
-          }
         }
-          );
+      );
      }
-    
-    }
 
   if(hide5 === true){
     earthhero.hide();
@@ -614,53 +586,52 @@ if(hide3 === false){
   a8.depth = 2;
   a9.depth = 2;
   a10.depth = 2;
-  btn_close.visible = false;
+  close.visible = false;
   allowance = "no";
     if(rand===1){
 a1.visible = true;
 a1.depth = 3;
-btn_close.visible = true;
+close.visible = true;
     } else if (rand === 2){
 a2.visible = true;
 a2.depth = 3;
-btn_close.visible = true;
+close.visible = true;
     }  else if (rand === 3){
             a3.visible = true;
             a3.depth = 3;
-btn_close.visible = true;
+close.visible = true;
                 } else if (rand === 4){
                   a4.visible = true;
                   a4.depth = 3;
-btn_close.visible = true;
+close.visible = true;
                       } else if (rand === 5){
                         a5.visible = true;
                         a5.depth = 3;
-btn_close.visible = true;
+close.visible = true;
                             } else if (rand === 6){
                               a6.visible = true;
                               a6.depth = 3;
-btn_close.visible = true;
+close.visible = true;
                                   } else if (rand ===7){
                                     a7.visible = true;
                                     a7.depth = 3;
-btn_close.visible = true;
+close.visible = true;
                                         } else if (rand === 8){
                                           a8.visible = true;
                                           a8.depth = 3;
-btn_close.visible = true;
+close.visible = true;
                                               } else if (rand === 9){
                                                 a9.visible = true;
                                                 a9.depth = 3;
-btn_close.visible = true;
+close.visible = true;
                                                     }else if (rand === 10){
                                                       a10.visible = true;
                                                       a10.depth = 3;
-btn_close.visible = true;
+close.visible = true;
                                                           }
   }
 
-  if (mousePressedOver(btn_close)) {
-    if(btn_close.visible === true && swalison === false){
+  if (mousePressedOver(close)) {
     clicksound.play();
     console.log("btn_close pressed");
       a1.visible = false;
@@ -683,7 +654,7 @@ btn_close.visible = true;
   a8.depth = 2;
   a9.depth = 2;
   a10.depth = 2;
-  btn_close.visible = false;
+  close.visible = false;
   }
   drawSprites();
   fill("black");
@@ -723,4 +694,4 @@ btn_close.visible = true;
   text("Email:", 150, 630);
   text("Phone:", 150, 650);
   }
-}}
+}
